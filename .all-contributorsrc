@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "flish",
+      "name": "Andy Flisher",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3818800?v=4",
+      "profile": "http://xyroh.com",
+      "contributions": [
+        "code",
+        "doc",
+        "projectManagement",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "AzUrlShortener-Apps",
+  "projectOwner": "Xyroh",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
