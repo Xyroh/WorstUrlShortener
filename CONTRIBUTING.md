@@ -10,7 +10,7 @@ Add an issue.  We'll review it, add labels and reply within a few days.
 ## See an issue you'd like to work on?
 
 Comment on the issue that you'd like to work on it 
-and we'll add the `claimed` label.  If you see the `claimed` label already on the issue you 
+and we'll add the `claimed` label.  If you see the `claimed 📌` label already on the issue you 
 might want to ask the contributor if they'd like some help.
 
 ## Documentation/etc need updating?
