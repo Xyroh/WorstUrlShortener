@@ -13,10 +13,6 @@ Just create an issue and we'll get back to you
 ## Contributing
 We welcome all contributions and will acknowledge them here, please ensure you have read and agreed to our [code of conduct](CODE_OF_CONDUCT.md) and understood our [contributing guidelines](CONTRIBUTING.md) prior to jumping in
 
-## Thanks
-// TODO
-
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
