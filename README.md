@@ -5,8 +5,8 @@
 Mobile and Desktop apps to interface with the AzUrlShortener project available at https://github.com/FBoucher/AzUrlShortener/
 
 ## Status
-iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/a665ece3-b09b-426b-8a33-b657d6bac85a/branches/develop/badge)](https://appcenter.ms)<br/>
-Droid: [![Build status](https://build.appcenter.ms/v0.1/apps/5ee589a3-4731-4c0d-9bb4-d2e65c7d9193/branches/develop/badge)](https://appcenter.ms)<br/>
+iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/23951d5c-ad63-41ac-939b-8aec742ad4cf/branches/develop/badge)](https://appcenter.ms)<br/>
+Droid: [![Build status](https://build.appcenter.ms/v0.1/apps/767894e1-b6f8-45f6-8fe3-94a478c8394b/branches/develop/badge)](https://appcenter.ms)<br/>
 Mac: // TODO<br/>
 Windows: // TODO<br/>
 
