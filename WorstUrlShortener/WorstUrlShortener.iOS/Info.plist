@@ -20,12 +20,20 @@
         <string>UIInterfaceOrientationLandscapeLeft</string>
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>UIFontIcons.ttf</string>
+        <string>Montserrat-Bold.ttf</string>
+        <string>Montserrat-Medium.ttf</string>
+        <string>Montserrat-Regular.ttf</string>
+        <string>Montserrat-SemiBold.ttf</string>
+    </array>
     <key>MinimumOSVersion</key>
     <string>8.0</string>
     <key>CFBundleDisplayName</key>
     <string>WorstUrlShortener</string>
     <key>CFBundleIdentifier</key>
-    <string>com.xyroh.worst.urlshortener.Worst-Url-Shortener</string>
+    <string>com.askaris.arcus.remote.Arcus-Remote</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>UILaunchStoryboardName</key>
@@ -34,5 +42,7 @@
     <string>WorstUrlShortener</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleBlackOpaque</string>
 </dict>
 </plist>
