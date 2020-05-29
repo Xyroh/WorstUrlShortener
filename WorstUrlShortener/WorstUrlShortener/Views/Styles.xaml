@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="WorstUrlShortener.Views.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    
+    <x:String x:Key="SettingsIcon">&#xe72b;</x:String>
+    <x:String x:Key="VideoIcon">&#xe718;</x:String>
+    <x:String x:Key="HelpIcon">&#xe72c;</x:String>
+    <x:String x:Key="ChatIcon">&#xe73b;</x:String>
+    <x:String x:Key="AddIcon">&#xe730;</x:String>
+    <x:String x:Key="CloseIcon">&#xe724;</x:String>
+    <x:String x:Key="BurgerIcon">&#xe72e;</x:String>
+    
+    
+</ResourceDictionary>
