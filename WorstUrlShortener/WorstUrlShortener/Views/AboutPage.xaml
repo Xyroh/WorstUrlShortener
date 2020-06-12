@@ -8,6 +8,8 @@
             <Label Text="About"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
+
+            <TableView x:Name="TableView" Intent="Menu" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

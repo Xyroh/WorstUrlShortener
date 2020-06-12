@@ -46,7 +46,8 @@ namespace WorstUrlShortener
                 XyrohLib.LogCrash(ex);
             }
 
-            this.MainPage = new MainPage();
+            // this.MainPage = new MainPage();
+            this.MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

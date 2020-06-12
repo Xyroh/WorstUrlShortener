@@ -17,12 +17,12 @@ namespace WorstUrlShortener.Views
 
         protected override void OnAppearing()
         {
-            Accelerometer.ShakeDetected += this.OnShaked;
             try
             {
+                Accelerometer.ShakeDetected += this.OnShaked;
                 Accelerometer.Start(SensorSpeed.Default);
             }
-            catch
+            catch (FeatureNotSupportedException featEx)
             {
                 // for the emulator as not supported
             }
@@ -32,8 +32,16 @@ namespace WorstUrlShortener.Views
 
         protected override void OnDisappearing()
         {
-            Accelerometer.Stop();
-            Accelerometer.ShakeDetected -= this.OnShaked;
+            try
+            {
+                Accelerometer.Stop();
+                Accelerometer.ShakeDetected -= this.OnShaked;
+            }
+            catch (FeatureNotSupportedException featEx)
+            {
+                // for the emulator as not supported
+            }
+
             base.OnDisappearing();
         }
 

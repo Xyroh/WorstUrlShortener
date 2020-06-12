@@ -90,8 +90,7 @@ namespace WorstUrlShortener.Views
                     attachments.Add(this.captureImagePath);
                 }
 
-                // var ticketId = await XyrohLib.CreateTicket(this.TicketEmail.Text, this.TicketSubject.Text, this.TicketDescription.Text, new string[] { "hpf", "android", "xyrohlib" });
-                var ticketId = await XyrohLib.CreateTicketWithAttachment(this.TicketEmail.Text, this.TicketSubject.Text, this.TicketDescription.Text, new string[] { "hpf", "android", "xyrohlib" }, attachments);
+                var ticketId = await XyrohLib.CreateTicketWithAttachment(this.TicketEmail.Text, this.TicketSubject.Text, this.TicketDescription.Text, new string[] { "urlshortener", "worst", "mobile", "xyrohlib" }, attachments);
                 if (ticketId > 0)
                 {
                     await this.DisplayAlert("Ticket Created", "Ticket Ref: " + ticketId.ToString() + " Successfully Created", "OK");

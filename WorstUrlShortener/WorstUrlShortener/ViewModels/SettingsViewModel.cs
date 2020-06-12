@@ -12,8 +12,17 @@ namespace WorstUrlShortener.ViewModels
          *
          */
 
-        // analytics
+        // release notes - hacky but works for now
 
+        public static string ReleaseNotesMonitor
+        {
+            get => Preferences.Get("ReleaseNotesMonitor", @"
+Version 1.0 (AS YET UNKNOWN!!):
+
+-Initial Release");
+        }
+
+        // analytics
         public static string SentryKey
         {
             get => Preferences.Get("SentryKey", "https://b97c74f92fce40cab00418ed0ef0f8cc@sentry.io/5257872");
