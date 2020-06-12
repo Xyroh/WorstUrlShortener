@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
-    <Reference Include="XyrohLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="XyrohLib, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\libs\XyrohLib.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -71,6 +71,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DroidScreenCapture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

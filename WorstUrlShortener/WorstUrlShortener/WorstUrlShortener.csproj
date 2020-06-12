@@ -56,6 +56,10 @@
       <SubType>Designer</SubType>
       <Generator></Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\SupportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   
@@ -79,12 +83,15 @@
     <Compile Update="Views\Styles.xaml.cs">
       <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\SupportPage.xaml.cs">
+      <DependentUpon>SupportPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   
 
   <ItemGroup>
-    <Reference Include="XyrohLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="XyrohLib, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\libs\XyrohLib.dll</HintPath>
     </Reference>
   </ItemGroup>

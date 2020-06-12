@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:converters="clr-namespace:WorstUrlShortener.Utilities.Converters"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WorstUrlShortener.Views.SupportPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NegateBooleanConverter x:Key="negateBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5" Margin="0">
+            <Frame Margin="10" Padding="0" BackgroundColor="{DynamicResource textColorDarkTeal}">
+                <Frame.Content>
+                    <StackLayout Padding="10" Margin="10"
+                                 BackgroundColor="{DynamicResource backgroundColorOffWhite}" Orientation="Vertical">
+
+                        <Grid VerticalOptions="FillAndExpand" Margin="10">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
+                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource xyrohWhite}">
+                                <Label Text="Raise Support Ticket" Font="Normal, 24"
+                                       TextColor="{DynamicResource textColorDarkTeal}" />
+
+                            </FlexLayout>
+
+                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                                   Text="Raising a support ticket requires an active Internet Connection, please move to an area with a good active connection, at which point this message will disappear"
+                                   Font="Normal, 12"
+                                   TextColor="{DynamicResource textColorDarkTeal}"
+                                   IsVisible="{Binding IsOnline, Converter={StaticResource negateBooleanConverter}}" />
+
+                            <Grid Grid.ColumnSpan="1" Grid.Row="2" VerticalOptions="CenterAndExpand" Margin="0"
+                                  IsVisible="{Binding IsOnline}">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Entry x:Name="TicketEmail" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="0"
+                                       Placeholder="Email Address"
+                                       PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
+                                       TextColor="{DynamicResource textColorDarkGrey}" />
+                                <Entry x:Name="TicketSubject" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="1"
+                                       Placeholder="Subject"
+                                       PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
+                                       TextColor="{DynamicResource textColorDarkGrey}" />
+                                <Editor x:Name="TicketDescription" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0"
+                                        Placeholder="Describe the problem"
+                                        PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
+                                        TextColor="{DynamicResource textColorDarkGrey}" HeightRequest="60" />
+
+                                <Image x:Name="ScreenShotImage" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0"
+                                       WidthRequest="300" IsVisible="False" />
+
+                            </Grid>
+
+
+                        </Grid>
+
+                        <ContentView Padding="5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="CloseButton" Text="Close" Font="Normal, 20"
+                                        TextColor="{DynamicResource textColorDarkTeal}" Clicked="OnCloseButtonClicked" />
+                                <Button x:Name="SendButton" Text="Send" Font="Normal, 20"
+                                        TextColor="{DynamicResource textColorDarkTeal}"
+                                        IsEnabled="{Binding IsBusy, Converter={StaticResource negateBooleanConverter}}"
+                                        Clicked="OnSendTicketButtonClicked" />
+                            </StackLayout>
+                        </ContentView>
+
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
