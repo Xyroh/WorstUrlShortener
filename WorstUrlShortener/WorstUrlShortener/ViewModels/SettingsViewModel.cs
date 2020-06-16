@@ -4,8 +4,25 @@ namespace WorstUrlShortener.ViewModels
 {
     public class SettingsViewModel
     {
-        #region analytics
+        /*
+         *
+         * ALL THESE VALUES ARE APP SPECIFIC, IE FOR MY VERSION,
+         * CHANGE THEM ALL UNLESS YOU WANT YOUR APP CRASH REPORTS
+         * AND SUPPORT TICKETS COMING TO ME!!
+         *
+         */
 
+        // release notes - hacky but works for now
+
+        public static string ReleaseNotesMonitor
+        {
+            get => Preferences.Get("ReleaseNotesMonitor", @"
+Version 1.0 (AS YET UNKNOWN!!):
+
+-Initial Release");
+        }
+
+        // analytics
         public static string SentryKey
         {
             get => Preferences.Get("SentryKey", "https://b97c74f92fce40cab00418ed0ef0f8cc@sentry.io/5257872");
@@ -24,7 +41,17 @@ namespace WorstUrlShortener.ViewModels
             set => Preferences.Set("AppCenterAndroidKey", value);
         }
 
-        #endregion
+        // freshdesk
+        public static string FreshDeskURL
+        {
+            get => Preferences.Get("FreshDeskURL", "https://xyroh.freshdesk.com");
+            set => Preferences.Set("FreshDeskURL", value);
+        }
+
+        public static string FreshDeskKey
+        {
+            get => Preferences.Get("FreshDeskKey", "bH2xmn4atsRUVHxFI9x");
+            set => Preferences.Set("FreshDeskKey", value);
+        }
     }
 }
-

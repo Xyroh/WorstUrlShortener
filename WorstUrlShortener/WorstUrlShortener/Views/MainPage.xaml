@@ -6,7 +6,7 @@
              xmlns:androidSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WorstUrlShortener.Views.MainPage"
              androidSpecific:TabbedPage.ToolbarPlacement="Bottom"
-             androidSpecific:TabbedPage.BarSelectedItemColor="{DynamicResource PrimaryColor}"
+             androidSpecific:TabbedPage.BarSelectedItemColor="{DynamicResource XyrohTeal}"
              androidSpecific:TabbedPage.BarItemColor="{DynamicResource Gray-600}"
              BarBackgroundColor="White"
              NavigationPage.HasNavigationBar="False"
@@ -18,29 +18,21 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </TabbedPage.Resources>
-    
+
     <views:DefaultPage Title="Home" >
         <views:DefaultPage.IconImageSource>
             <FontImageSource FontFamily="{StaticResource FontIcons}"
                              Glyph="{StaticResource VideoIcon}"
-                             Size="16"/>
+                             Size="24"/>
         </views:DefaultPage.IconImageSource>
     </views:DefaultPage>
 
-    <views:SettingsPage Title="Settings">
-        <views:SettingsPage.IconImageSource>
-            <FontImageSource FontFamily="{StaticResource FontIcons}"
-                             Glyph="{StaticResource SettingsIcon}"
-                             Size="16"/>
-        </views:SettingsPage.IconImageSource>
-    </views:SettingsPage>
-    
-    <views:AboutPage Title="About" >
+    <views:AboutPage Title="Help" >
         <views:AboutPage.IconImageSource>
             <FontImageSource FontFamily="{StaticResource FontIcons}"
                              Glyph="{StaticResource HelpIcon}"
-                             Size="16"/>
+                             Size="24"/>
         </views:AboutPage.IconImageSource>
     </views:AboutPage>
-    
+
 </TabbedPage>

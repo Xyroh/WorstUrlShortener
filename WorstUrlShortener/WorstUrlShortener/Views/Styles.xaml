@@ -2,15 +2,13 @@
 <ResourceDictionary
     x:Class="WorstUrlShortener.Views.Styles"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    
-    <x:String x:Key="SettingsIcon">&#xe72b;</x:String>
-    <x:String x:Key="VideoIcon">&#xe718;</x:String>
-    <x:String x:Key="HelpIcon">&#xe72c;</x:String>
-    <x:String x:Key="ChatIcon">&#xe73b;</x:String>
-    <x:String x:Key="AddIcon">&#xe730;</x:String>
-    <x:String x:Key="CloseIcon">&#xe724;</x:String>
-    <x:String x:Key="BurgerIcon">&#xe72e;</x:String>
-    
-    
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:themes="clr-namespace:WorstUrlShortener.Themes;assembly=WorstUrlShortener">
+
+    <ResourceDictionary.MergedDictionaries>
+        <themes:LightTheme />
+    </ResourceDictionary.MergedDictionaries>
+
+
+
 </ResourceDictionary>
