@@ -6,7 +6,7 @@
              xmlns:androidSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WorstUrlShortener.Views.MainPage"
              androidSpecific:TabbedPage.ToolbarPlacement="Bottom"
-             androidSpecific:TabbedPage.BarSelectedItemColor="{DynamicResource PrimaryColor}"
+             androidSpecific:TabbedPage.BarSelectedItemColor="{DynamicResource XyrohTeal}"
              androidSpecific:TabbedPage.BarItemColor="{DynamicResource Gray-600}"
              BarBackgroundColor="White"
              NavigationPage.HasNavigationBar="False"

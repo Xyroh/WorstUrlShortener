@@ -17,7 +17,7 @@ namespace WorstUrlShortener.Views
 
             this.TableView.Root = new TableRoot("Help");
 
-            var mainSection = new TableSection("Server Monitor");
+            var mainSection = new TableSection("URL Shortener");
             this.TableView.Root.Add(mainSection);
 
             var supportCell = new ImageCell
