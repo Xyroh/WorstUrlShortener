@@ -115,6 +115,18 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Help.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Help.imageset\HelpIconNoBorder.png" />
+    <ImageAsset Include="Assets.xcassets\Help.imageset\HelpIconNoBorder%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Help.imageset\HelpIconNoBorder%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ReleaseNotes.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ReleaseNotes.imageset\ReleaseNotesIconNoBorder%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ReleaseNotes.imageset\ReleaseNotesIconNoBorder%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ReleaseNotes.imageset\ReleaseNotesIconNoBorder.png" />
+    <ImageAsset Include="Assets.xcassets\Idea.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -133,8 +145,8 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.2.2" />
     <PackageReference Include="SharpRaven" Version="2.4.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -154,5 +166,10 @@
     <BundleResource Include="Resources\Montserrat-Regular.ttf" />
     <BundleResource Include="Resources\Montserrat-SemiBold.ttf" />
     <BundleResource Include="Resources\UIFontIcons.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\help.imageset\" />
+    <Folder Include="Assets.xcassets\releasenotes.imageset\" />
+    <Folder Include="Assets.xcassets\idea.imageset\" />
   </ItemGroup>
 </Project>
