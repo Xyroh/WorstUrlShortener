@@ -94,7 +94,7 @@ namespace WorstUrlShortener.Views
                 if (ticketId > 0)
                 {
                     await this.DisplayAlert("Ticket Created", "Ticket Ref: " + ticketId.ToString() + " Successfully Created", "OK");
-                    await this.Navigation.PopModalAsync();
+                    await this.Navigation.PopAsync();
                 }
                 else
                 {
@@ -116,7 +116,7 @@ namespace WorstUrlShortener.Views
             {
                 XyrohLib.LogEvent("Support Page : Closed");
 
-                await this.Navigation.PopModalAsync();
+                await this.Navigation.PopAsync();
             }
             catch (Exception ex)
             {

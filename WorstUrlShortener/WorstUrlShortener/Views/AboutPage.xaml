@@ -2,14 +2,14 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WorstUrlShortener.Views.AboutPage">
+             x:Class="WorstUrlShortener.Views.AboutPage"  >
     <ContentPage.Content>
         <StackLayout>
             <Label Text="About"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
 
-            <TableView x:Name="TableView" Intent="Menu" />
+            <TableView x:Name="TableView" Intent="Menu" BackgroundColor="{DynamicResource XyrohWhite}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

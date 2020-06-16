@@ -9,6 +9,7 @@ using WorstUrlShortener.ViewModels;
 using WorstUrlShortener.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace WorstUrlShortener
 {
@@ -48,6 +49,7 @@ namespace WorstUrlShortener
 
             // this.MainPage = new MainPage();
             this.MainPage = new NavigationPage(new MainPage());
+
         }
 
         protected override void OnStart()

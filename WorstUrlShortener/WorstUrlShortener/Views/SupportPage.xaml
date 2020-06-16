@@ -14,10 +14,10 @@
 
 
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5" Margin="0">
-            <Frame Margin="10" Padding="0" BackgroundColor="{DynamicResource textColorDarkTeal}">
+            <Frame Margin="10" Padding="0" BackgroundColor="{DynamicResource XyrohTealDark}">
                 <Frame.Content>
                     <StackLayout Padding="10" Margin="10"
-                                 BackgroundColor="{DynamicResource backgroundColorOffWhite}" Orientation="Vertical">
+                                 BackgroundColor="{DynamicResource XyrohOffWhite}" Orientation="Vertical">
 
                         <Grid VerticalOptions="FillAndExpand" Margin="10">
 
@@ -33,9 +33,9 @@
 
 
                             <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
-                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource xyrohWhite}">
+                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
                                 <Label Text="Raise Support Ticket" Font="Normal, 24"
-                                       TextColor="{DynamicResource textColorDarkTeal}" />
+                                       BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
 
                             </FlexLayout>
 
@@ -49,31 +49,28 @@
                                   IsVisible="{Binding IsOnline}">
 
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*" />
                                     <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="3*" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
-                                    <ColumnDefinition Width="2*" />
-                                </Grid.ColumnDefinitions>
 
 
-                                <Entry x:Name="TicketEmail" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="0"
+                                <Entry x:Name="TicketEmail" Grid.Row="0"
                                        Placeholder="Email Address"
-                                       PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
-                                       TextColor="{DynamicResource textColorDarkGrey}" />
-                                <Entry x:Name="TicketSubject" Grid.ColumnSpan="1" Grid.Row="0" Grid.Column="1"
+                                       PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       TextColor="{DynamicResource XyrohGreyDark}" />
+                                <Entry x:Name="TicketSubject" Grid.Row="1"
                                        Placeholder="Subject"
-                                       PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
-                                       TextColor="{DynamicResource textColorDarkGrey}" />
-                                <Editor x:Name="TicketDescription" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0"
+                                       PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       TextColor="{DynamicResource XyrohGreyDark}" />
+                                <Editor x:Name="TicketDescription" Grid.Row="2"
                                         Placeholder="Describe the problem"
-                                        PlaceholderColor="{DynamicResource textColorVeryLightTeal }"
-                                        TextColor="{DynamicResource textColorDarkGrey}" HeightRequest="60" />
+                                        PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                        TextColor="{DynamicResource XyrohGreyDark}" HeightRequest="60" />
 
-                                <Image x:Name="ScreenShotImage" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0"
+                                <Image x:Name="ScreenShotImage"  Grid.Row="2"
                                        WidthRequest="300" IsVisible="False" />
 
                             </Grid>
@@ -84,9 +81,9 @@
                         <ContentView Padding="5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
                             <StackLayout Orientation="Horizontal">
                                 <Button x:Name="CloseButton" Text="Close" Font="Normal, 20"
-                                        TextColor="{DynamicResource textColorDarkTeal}" Clicked="OnCloseButtonClicked" />
+                                        TextColor="{DynamicResource XyrohTealDark}" Clicked="OnCloseButtonClicked" />
                                 <Button x:Name="SendButton" Text="Send" Font="Normal, 20"
-                                        TextColor="{DynamicResource textColorDarkTeal}"
+                                        TextColor="{DynamicResource XyrohTealDark}"
                                         IsEnabled="{Binding IsBusy, Converter={StaticResource negateBooleanConverter}}"
                                         Clicked="OnSendTicketButtonClicked" />
                             </StackLayout>
