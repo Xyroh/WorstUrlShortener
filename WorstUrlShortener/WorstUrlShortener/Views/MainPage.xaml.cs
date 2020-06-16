@@ -53,7 +53,7 @@ namespace WorstUrlShortener.Views
             {
                 // capture the screen
                 var screenImage = await DependencyService.Get<IScreen>().CaptureScreenAsync();
-                await this.Navigation.PushModalAsync(new SupportPage(screenImage));
+                await this.Navigation.PushModalAsync(new SupportPage("Send Feedback", screenImage));
             }
             catch (Exception ex)
             {

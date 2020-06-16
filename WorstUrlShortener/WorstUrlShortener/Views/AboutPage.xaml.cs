@@ -33,7 +33,7 @@ namespace WorstUrlShortener.Views
                 Detail = "Got an idea or like us to implement a feature?",
                 ImageSource = ImageSource.FromFile("idea.png")
             };
-            ideaCell.Tapped += this.OnSupportCellTapped;
+            ideaCell.Tapped += this.OnIdeaCellTapped;
             mainSection.Add(ideaCell);
 
             var aboutSection = new TableSection("About");
@@ -58,7 +58,14 @@ namespace WorstUrlShortener.Views
         {
             XyrohLib.LogEvent("Help : Support : Tapped");
 
-            await this.Navigation.PushAsync(new SupportPage());
+            await this.Navigation.PushAsync(new SupportPage("Raise a Support Ticket"));
+        }
+
+        protected async void OnIdeaCellTapped(object sender, EventArgs e)
+        {
+            XyrohLib.LogEvent("Help : Idea : Tapped");
+
+            await this.Navigation.PushAsync(new SupportPage("Suggest a Feature?"));
         }
 
         protected async void OnReleaseNotesCellTapped(object sender, EventArgs e)

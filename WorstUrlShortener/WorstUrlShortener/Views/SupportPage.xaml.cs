@@ -16,9 +16,13 @@ namespace WorstUrlShortener.Views
         private byte[] capturedImageBytes;
         private string captureImagePath;
 
-        public SupportPage(byte[] imageArray)
+        private string pageTitle = "Raise a Support Ticket";
+
+        public SupportPage(string title, byte[] imageArray)
         {
             XyrohLib.LogEvent("Page : Support : With Screenshot");
+
+            this.pageTitle = title;
             this.capturedImageBytes = imageArray;
 
             try
@@ -40,9 +44,11 @@ namespace WorstUrlShortener.Views
             this.Init();
         }
 
-        public SupportPage()
+        public SupportPage(string title)
         {
             XyrohLib.LogEvent("Page : Support");
+
+            this.pageTitle = title;
             this.Init();
         }
 
@@ -50,6 +56,7 @@ namespace WorstUrlShortener.Views
         {
             this.InitializeComponent();
 
+            this.SupportPageTitle.Text = this.pageTitle;
             this.TicketSubject.Text = "Worst URL Shortener Support Request - " + VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild;
 
             try
