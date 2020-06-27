@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:converters="clr-namespace:WorstUrlShortener.Utilities.Converters"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WorstUrlShortener.Views.SupportPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NegateBooleanConverter x:Key="negateBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5" Margin="0">
+            <Frame Margin="10" Padding="0" BackgroundColor="{DynamicResource XyrohTealDark}">
+                <Frame.Content>
+                    <StackLayout Padding="10" Margin="10"
+                                 BackgroundColor="{DynamicResource XyrohOffWhite}" Orientation="Vertical">
+
+                        <Grid VerticalOptions="FillAndExpand" Margin="10">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
+                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
+                                <Label x:Name="SupportPageTitle" Text="" Font="Normal, 24"
+                                       BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
+
+                            </FlexLayout>
+
+                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                                   Text="Raising a support ticket requires an active Internet Connection, please move to an area with a good active connection, at which point this message will disappear"
+                                   Font="Normal, 12"
+                                   TextColor="{DynamicResource textColorDarkTeal}"
+                                   IsVisible="{Binding IsOnline, Converter={StaticResource negateBooleanConverter}}" />
+
+                            <Grid Grid.ColumnSpan="1" Grid.Row="2" VerticalOptions="CenterAndExpand" Margin="0"
+                                  IsVisible="{Binding IsOnline}">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+
+
+                                <Entry x:Name="TicketEmail" Grid.Row="0"
+                                       Placeholder="Email Address"
+                                       PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       TextColor="{DynamicResource XyrohGreyDark}" />
+                                <Entry x:Name="TicketSubject" Grid.Row="1"
+                                       Placeholder="Subject"
+                                       PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       TextColor="{DynamicResource XyrohGreyDark}" />
+                                <Editor x:Name="TicketDescription" Grid.Row="2"
+                                        Placeholder="Describe the problem"
+                                        PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                        TextColor="{DynamicResource XyrohGreyDark}" HeightRequest="60" />
+
+                                <Image x:Name="ScreenShotImage"  Grid.Row="2"
+                                       WidthRequest="300" IsVisible="False" />
+
+                            </Grid>
+
+
+                        </Grid>
+
+                        <ContentView Padding="5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="CloseButton" Text="Close" Font="Normal, 20"
+                                        TextColor="{DynamicResource XyrohTealDark}" Clicked="OnCloseButtonClicked" />
+                                <Button x:Name="SendButton" Text="Send" Font="Normal, 20"
+                                        TextColor="{DynamicResource XyrohTealDark}"
+                                        IsEnabled="{Binding IsBusy, Converter={StaticResource negateBooleanConverter}}"
+                                        Clicked="OnSendTicketButtonClicked" />
+                            </StackLayout>
+                        </ContentView>
+
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

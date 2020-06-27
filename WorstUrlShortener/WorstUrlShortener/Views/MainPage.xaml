@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:WorstUrlShortener.Views;assembly=WorstUrlShortener"
+             xmlns:androidSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="WorstUrlShortener.Views.MainPage"
+             androidSpecific:TabbedPage.ToolbarPlacement="Bottom"
+             androidSpecific:TabbedPage.BarSelectedItemColor="{DynamicResource XyrohTeal}"
+             androidSpecific:TabbedPage.BarItemColor="{DynamicResource Gray-600}"
+             BarBackgroundColor="White"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+
+    <views:DefaultPage Title="Home" >
+        <views:DefaultPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                             Glyph="{StaticResource VideoIcon}"
+                             Size="24"/>
+        </views:DefaultPage.IconImageSource>
+    </views:DefaultPage>
+
+    <views:AboutPage Title="Help" >
+        <views:AboutPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                             Glyph="{StaticResource HelpIcon}"
+                             Size="24"/>
+        </views:AboutPage.IconImageSource>
+    </views:AboutPage>
+
+</TabbedPage>
