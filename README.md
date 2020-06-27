@@ -1,8 +1,8 @@
-# AzUrlShortener-Apps
+# Worst Url Shortener
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-Mobile and Desktop apps to interface with the AzUrlShortener project available at https://github.com/FBoucher/AzUrlShortener/
+Mobile and Desktop apps to interface with a variety of public URL Shortening services
 
 ## Status
 iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/23951d5c-ad63-41ac-939b-8aec742ad4cf/branches/develop/badge)](https://appcenter.ms)<br/>
@@ -25,7 +25,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://xyroh.com"><img src="https://avatars3.githubusercontent.com/u/3818800?v=4" width="100px;" alt=""/><br /><sub><b>Andy Flisher</b></sub></a><br /><a href="https://github.com/Xyroh/AzUrlShortener-Apps/commits?author=flish" title="Code">💻</a> <a href="https://github.com/Xyroh/AzUrlShortener-Apps/commits?author=flish" title="Documentation">📖</a> <a href="#projectManagement-flish" title="Project Management">📆</a> <a href="#infra-flish" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="http://xyroh.com"><img src="https://avatars3.githubusercontent.com/u/3818800?v=4" width="100px;" alt=""/><br /><sub><b>Andy Flisher</b></sub></a><br /><a href="https://github.com/Xyroh/WorstUrlShortener/commits?author=flish" title="Code">💻</a> <a href="https://github.com/Xyroh/WorstUrlShortener/commits?author=flish" title="Documentation">📖</a> <a href="#projectManagement-flish" title="Project Management">📆</a> <a href="#infra-flish" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
