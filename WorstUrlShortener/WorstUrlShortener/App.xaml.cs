@@ -16,6 +16,7 @@ namespace WorstUrlShortener
     public partial class App : Application
     {
         public static string ImagesStore;
+        public static BaseViewModel ViewModel;
 
         public App()
         {
@@ -46,6 +47,9 @@ namespace WorstUrlShortener
             {
                 XyrohLib.LogCrash(ex);
             }
+
+            // Core ViewModel
+            App.ViewModel = new BaseViewModel();
 
             // this.MainPage = new MainPage();
             this.MainPage = new NavigationPage(new MainPage());

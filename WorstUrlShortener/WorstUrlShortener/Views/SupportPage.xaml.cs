@@ -54,10 +54,11 @@ namespace WorstUrlShortener.Views
 
         private async void Init()
         {
+            this.BindingContext = App.ViewModel;
             this.InitializeComponent();
 
             this.SupportPageTitle.Text = this.pageTitle;
-            this.TicketSubject.Text = "Worst URL Shortener Support Request - " + VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild;
+            this.TicketSubject.Text = "'Worst' URL Shortener Support Request - " + VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild;
 
             try
             {

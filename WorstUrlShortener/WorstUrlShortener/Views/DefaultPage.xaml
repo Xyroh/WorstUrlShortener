@@ -2,12 +2,143 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:WorstUrlShortener.Utilities.Converters"
              x:Class="WorstUrlShortener.Views.DefaultPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NegateBooleanConverter x:Key="negateBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Default"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+
+
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" Margin="0,50,0,0">
+            <Frame Margin="5" Padding="0" BackgroundColor="{DynamicResource XyrohTealDark}">
+                <Frame.Content>
+                    <StackLayout Padding="10" Margin="10"
+                                 BackgroundColor="{DynamicResource XyrohOffWhite}" Orientation="Vertical">
+
+                        <Grid VerticalOptions="FillAndExpand" Margin="10">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
+                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
+                                <Label  Text="'Worst' URL Shortener" Font="Normal, 24"
+                                       BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
+
+                            </FlexLayout>
+
+                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                                   Text="The URL Shortener requires an active Internet Connection, please move to an area with a good active connection."
+                                   Font="Normal, 12"
+                                   TextColor="{DynamicResource textColorDarkTeal}"
+                                   IsVisible="{Binding IsOnline, Converter={StaticResource negateBooleanConverter}}" />
+
+                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                                   Text="Simply choose the URL Shortening service to use, enter your URL, and click the button to generate and use your new, shortened, URL."
+                                   Font="Normal, 12"
+                                   TextColor="{DynamicResource textColorDarkTeal}"
+                                   IsVisible="{Binding IsOnline}" />
+
+                            <Grid Grid.ColumnSpan="1" Grid.Row="2" VerticalOptions="CenterAndExpand" Margin="0"
+                                  IsVisible="{Binding IsOnline}">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Text="Shortener to use" Grid.Row="0"
+                                       TextColor="{DynamicResource XyrohTealLight}"/>
+
+                                <Picker x:Name="URLShortener" Grid.Row="1"
+                                        Title="Tap to pick URL Shortener" TitleColor="{DynamicResource XyrohTealLight}" TextColor="{DynamicResource XyrohGreyDark}">
+                                    <Picker.Items>
+                                        <x:String>TinyUrl</x:String>
+                                    </Picker.Items>
+                                </Picker>
+
+
+                                <Entry x:Name="FullURL" Grid.Row="2"
+                                       Text = "https://xyroh.com"
+                                       Placeholder="URL to Shorten"
+                                       PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       Focused="OnFullURLFocused"
+                                       TextColor="{DynamicResource XyrohGreyDark}" />
+
+
+                                <Label x:Name="ResultsLabel" Text="Shortened URL" Grid.Row="3" Margin="0,15,0,0"
+                                       IsVisible="False"
+                                       TextColor="{DynamicResource XyrohTealLight}"/>
+
+
+
+                                <StackLayout x:Name="CopyToClipBoardStack"
+                                             IsVisible="false"
+                                             Orientation="Horizontal"
+                                             Grid.Row="4" >
+
+                                    <Editor x:Name="ShortURL" HorizontalOptions="FillAndExpand"
+                                            IsEnabled="False"
+                                            TextColor="{DynamicResource XyrohGreyDark}"
+                                            HeightRequest="60" />
+
+                                    <ImageButton WidthRequest="24" HeightRequest="24" Clicked="OnClipboardButtonClicked">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                                         Glyph="{StaticResource ClipboardIcon}"
+                                                         Color="{DynamicResource XyrohTealLight}"
+                                                         Size="24"/>
+                                        </ImageButton.Source>
+                                        </ImageButton>
+
+                                </StackLayout>
+
+                            </Grid>
+
+
+                        </Grid>
+
+                        <ContentView Padding="5,100,5,5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="ShortenButton" Text="Shorten" Font="Normal, 20"
+                                        TextColor="{DynamicResource XyrohTealDark}" Clicked="OnShortenButtonClicked" />
+
+                            </StackLayout>
+                        </ContentView>
+
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+
+
         </StackLayout>
+
+
+
+
     </ContentPage.Content>
 </ContentPage>
