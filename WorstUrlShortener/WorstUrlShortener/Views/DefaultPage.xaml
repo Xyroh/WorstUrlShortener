@@ -94,10 +94,28 @@
                                        IsVisible="False"
                                        TextColor="{DynamicResource XyrohTealLight}"/>
 
-                                <Editor x:Name="ShortURL" Grid.Row="4"
-                                        IsVisible="False"
-                                        TextColor="{DynamicResource XyrohGreyDark}" HeightRequest="60" />
 
+
+                                <StackLayout x:Name="CopyToClipBoardStack"
+                                             IsVisible="false"
+                                             Orientation="Horizontal"
+                                             Grid.Row="4" >
+
+                                    <Editor x:Name="ShortURL" HorizontalOptions="FillAndExpand"
+                                            IsEnabled="False"
+                                            TextColor="{DynamicResource XyrohGreyDark}"
+                                            HeightRequest="60" />
+
+                                    <ImageButton WidthRequest="24" HeightRequest="24" Clicked="OnClipboardButtonClicked">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                                         Glyph="{StaticResource ClipboardIcon}"
+                                                         Color="{DynamicResource XyrohTealLight}"
+                                                         Size="24"/>
+                                        </ImageButton.Source>
+                                        </ImageButton>
+
+                                </StackLayout>
 
                             </Grid>
 

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using com.xyroh.lib;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -101,9 +102,16 @@ namespace WorstUrlShortener.Views
             this.hideResults();
         }
 
+        private async void OnClipboardButtonClicked(object sender, EventArgs e)
+        {
+            XyrohLib.LogEvent("Shorten Page : Copy to Clipboard");
+
+            await Clipboard.SetTextAsync(this.ShortURL.Text);
+        }
+
         private void showResults()
         {
-            this.ShortURL.IsVisible = true;
+            this.CopyToClipBoardStack.IsVisible = true;
             this.ResultsLabel.IsVisible = true;
             this.ShortenButton.IsEnabled = true;
 
@@ -111,9 +119,11 @@ namespace WorstUrlShortener.Views
 
         private void hideResults()
         {
-            this.ShortURL.IsVisible = false;
+            this.CopyToClipBoardStack.IsVisible = false;
             this.ResultsLabel.IsVisible = false;
             this.ShortenButton.IsEnabled = true;
         }
+
+
     }
 }
