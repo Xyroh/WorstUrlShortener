@@ -26,9 +26,9 @@
                         <Grid VerticalOptions="FillAndExpand" Margin="10">
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="60" />
-                                <RowDefinition Height="60" />
                                 <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2*" />
                             </Grid.RowDefinitions>
 
                             <Grid.ColumnDefinitions>
@@ -60,9 +60,10 @@
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="20" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="50" />
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
@@ -70,22 +71,30 @@
                                 </Grid.ColumnDefinitions>
 
 
-                                <!--<Label Grid.Row="0"
-                                       Text="URL Shortener to use"
-                                       TextColor="{DynamicResource XyrohTealLight}" />-->
+                                <Label Text="Shortener to use" Grid.Row="0"
+                                       TextColor="{DynamicResource XyrohTealLight}"/>
+
                                 <Picker x:Name="URLShortener" Grid.Row="1"
-                                        Title="URL Shortener to use" TitleColor="{DynamicResource XyrohTealLight}">
+                                        Title="Tap to pick URL Shortener" TitleColor="{DynamicResource XyrohTealLight}" TextColor="{DynamicResource XyrohGreyDark}">
                                     <Picker.Items>
                                         <x:String>TinyUrl</x:String>
                                     </Picker.Items>
                                 </Picker>
 
+
                                 <Entry x:Name="FullURL" Grid.Row="2"
+                                       Text = "https://xyroh.com"
                                        Placeholder="URL to Shorten"
                                        PlaceholderColor="{DynamicResource XyrohTealLight }"
+                                       Focused="OnFullURLFocused"
                                        TextColor="{DynamicResource XyrohGreyDark}" />
 
-                                <Editor x:Name="ShortURL" Grid.Row="3"
+
+                                <Label x:Name="ResultsLabel" Text="Shortened URL" Grid.Row="3" Margin="0,15,0,0"
+                                       IsVisible="False"
+                                       TextColor="{DynamicResource XyrohTealLight}"/>
+
+                                <Editor x:Name="ShortURL" Grid.Row="4"
                                         IsVisible="False"
                                         TextColor="{DynamicResource XyrohGreyDark}" HeightRequest="60" />
 
@@ -95,7 +104,7 @@
 
                         </Grid>
 
-                        <ContentView Padding="5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                        <ContentView Padding="5,100,5,5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
                             <StackLayout Orientation="Horizontal">
                                 <Button x:Name="ShortenButton" Text="Shorten" Font="Normal, 20"
                                         TextColor="{DynamicResource XyrohTealDark}" Clicked="OnShortenButtonClicked" />
