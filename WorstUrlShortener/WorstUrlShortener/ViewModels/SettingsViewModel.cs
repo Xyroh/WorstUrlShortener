@@ -17,9 +17,9 @@ namespace WorstUrlShortener.ViewModels
         public static string ReleaseNotesMonitor
         {
             get => Preferences.Get("ReleaseNotesMonitor", @"
-Version 1.0 (AS YET UNKNOWN!!):
-
--Initial Release");
+[1.0.0 - June 2020]
+Added
+- Initial Release with TinyURL and Goo.gl (Now Firebase) Support");
         }
 
         // url shorteners

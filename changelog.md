@@ -11,3 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 ### Removed
+
+## [1.0.0 - June 2020]
+### Added
+- Initial Release with TinyURL and Goo.gl (Now Firebase) Support
+
