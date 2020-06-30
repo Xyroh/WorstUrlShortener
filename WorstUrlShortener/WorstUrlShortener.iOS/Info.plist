@@ -33,7 +33,7 @@
     <key>CFBundleDisplayName</key>
     <string>WorstUrlShortener</string>
     <key>CFBundleIdentifier</key>
-    <string>com.askaris.arcus.remote.Arcus-Remote</string>
+    <string>com.xyroh.worst.urlshortener</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>UILaunchStoryboardName</key>
