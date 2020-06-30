@@ -6,7 +6,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using com.xyroh.lib;
+using Newtonsoft.Json;
 using WorstUrlShortener.Interfaces;
+using WorstUrlShortener.Models.Json;
 using WorstUrlShortener.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -97,13 +99,23 @@ namespace WorstUrlShortener.Views
 
                             try
                             {
-                                var response = await client.GetAsync(url);
-                                var responseBody = await response.Content.ReadAsStringAsync();
-                                XyrohLib.Log("RESP: " + responseBody);
+                                var json = new FirebaseLinkRequest();
+                                json.longDynamicLink = SettingsViewModel.FirebaseURLDomain + "/?link=" +
+                                                       this.FullURL.Text + "&apn=" + AppInfo.PackageName + "&ibi=" +
+                                                       AppInfo.PackageName;
+
+                                XyrohLib.Log("JSON: " + JsonConvert.SerializeObject(json));
+
+                                var requestBody = new StringContent(JsonConvert.SerializeObject(json).ToString(), Encoding.UTF8, "application/json");
+                                var response = await client.PostAsync(url, requestBody);
+                                var responseString = await response.Content.ReadAsStringAsync();
+                                XyrohLib.Log("RESP: " + responseString);
                                 XyrohLib.Log("Status Code: " + response.StatusCode.ToString());
                                 if (response.IsSuccessStatusCode)
                                 {
-                                    shortenedURl = responseBody.ToString();
+                                    var responseBody = JsonConvert.DeserializeObject<FirebaseLinkResponse>(responseString);
+
+                                    shortenedURl = responseBody.shortLink.ToString();
                                     XyrohLib.Log("Short: " + shortenedURl);
 
                                     this.showResults();

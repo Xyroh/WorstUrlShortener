@@ -30,6 +30,12 @@ Version 1.0 (AS YET UNKNOWN!!):
             set => Preferences.Set("FirebaseAPIKey", value);
         }
 
+        public static string FirebaseURLDomain
+        {
+            get => Preferences.Get("FirebaseURLDomain", "https://worsturlshortener.page.link");
+            set => Preferences.Set("FirebaseURLDomain", value);
+        }
+
         // analytics
         public static string SentryKey
         {

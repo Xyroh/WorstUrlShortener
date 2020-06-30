@@ -103,7 +103,8 @@
                                              Grid.Row="4" >
 
                                     <Editor x:Name="ShortURL" HorizontalOptions="FillAndExpand"
-                                            IsEnabled="False"
+                                            IsEnabled="false"
+                                            WidthRequest="30"
                                             TextColor="{DynamicResource XyrohGreyDark}"
                                             HeightRequest="60" />
 
