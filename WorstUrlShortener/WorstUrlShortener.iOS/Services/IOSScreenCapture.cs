@@ -1,13 +1,14 @@
 using System;
 using System.Threading.Tasks;
 using UIKit;
+using WorstUrlShortener.Interfaces;
 using WorstUrlShortener.iOS.Services;
 
 [assembly: Xamarin.Forms.Dependency(typeof(iOSScreenCapture))]
 
 namespace WorstUrlShortener.iOS.Services
 {
-    public class iOSScreenCapture
+    public class iOSScreenCapture : IScreen
     {
         public async Task<byte[]> CaptureScreenAsync()
         {

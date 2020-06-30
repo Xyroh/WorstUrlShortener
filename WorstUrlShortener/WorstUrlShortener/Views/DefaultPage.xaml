@@ -78,6 +78,7 @@
                                         Title="Tap to pick URL Shortener" TitleColor="{DynamicResource XyrohTealLight}" TextColor="{DynamicResource XyrohGreyDark}">
                                     <Picker.Items>
                                         <x:String>TinyUrl</x:String>
+                                        <x:String>Goo.gl</x:String>
                                     </Picker.Items>
                                 </Picker>
 

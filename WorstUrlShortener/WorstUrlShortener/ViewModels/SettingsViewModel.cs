@@ -22,6 +22,14 @@ Version 1.0 (AS YET UNKNOWN!!):
 -Initial Release");
         }
 
+        // url shorteners
+        // worsturlshortener.page.link
+        public static string FirebaseAPIKey
+        {
+            get => Preferences.Get("FirebaseAPIKey", "AIzaSyASS4ob9etoqdOwbm9WnjykRKm6SQmX1JA");
+            set => Preferences.Set("FirebaseAPIKey", value);
+        }
+
         // analytics
         public static string SentryKey
         {
