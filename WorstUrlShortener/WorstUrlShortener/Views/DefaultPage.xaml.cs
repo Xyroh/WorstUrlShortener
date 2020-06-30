@@ -33,6 +33,7 @@ namespace WorstUrlShortener.Views
         {
             try
             {
+
                 XyrohLib.LogEvent("Shorten Page : Shorten Clicked");
 
                 this.ShortenButton.IsEnabled = false;
@@ -46,6 +47,10 @@ namespace WorstUrlShortener.Views
 
                     XyrohLib.Log("Shortener: " + this.URLShortener.SelectedItem.ToString());
                     XyrohLib.Log("Full: " + this.FullURL.Text);
+
+                    var dict = new Dictionary<string, string>();
+                    dict.Add("Shortener", this.URLShortener.SelectedItem.ToString());
+                    XyrohLib.LogEvent("Shorten Page : Shorten", dict);
 
                     var shortenedURl = string.Empty;
                     switch (this.URLShortener.SelectedItem.ToString())
