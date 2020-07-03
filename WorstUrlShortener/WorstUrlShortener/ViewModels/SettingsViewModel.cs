@@ -17,9 +17,24 @@ namespace WorstUrlShortener.ViewModels
         public static string ReleaseNotesMonitor
         {
             get => Preferences.Get("ReleaseNotesMonitor", @"
-Version 1.0 (AS YET UNKNOWN!!):
+[1.0.0 - June 2020]
 
--Initial Release");
+Added
+- Initial Release with TinyURL and Goo.gl (Now Firebase) Support");
+        }
+
+        // url shorteners
+        // worsturlshortener.page.link
+        public static string FirebaseAPIKey
+        {
+            get => Preferences.Get("FirebaseAPIKey", "AIzaSyASS4ob9etoqdOwbm9WnjykRKm6SQmX1JA");
+            set => Preferences.Set("FirebaseAPIKey", value);
+        }
+
+        public static string FirebaseURLDomain
+        {
+            get => Preferences.Get("FirebaseURLDomain", "https://worsturlshortener.page.link");
+            set => Preferences.Set("FirebaseURLDomain", value);
         }
 
         // analytics

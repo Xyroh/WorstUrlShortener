@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\IOSResizeImage.cs" />
     <Compile Include="Services\IOSScreenCapture.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
@@ -74,45 +75,6 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Help.imageset\Contents.json" />
@@ -127,6 +89,24 @@
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%403x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%402x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad83%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -171,5 +151,8 @@
     <Folder Include="Assets.xcassets\help.imageset\" />
     <Folder Include="Assets.xcassets\releasenotes.imageset\" />
     <Folder Include="Assets.xcassets\idea.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
 </Project>

@@ -66,12 +66,11 @@
                                        PlaceholderColor="{DynamicResource XyrohTealLight }"
                                        TextColor="{DynamicResource XyrohGreyDark}" />
                                 <Editor x:Name="TicketDescription" Grid.Row="2"
-                                        Placeholder="Describe the problem"
+                                        IsEnabled="True"
+                                        Placeholder="Your message"
                                         PlaceholderColor="{DynamicResource XyrohTealLight }"
                                         TextColor="{DynamicResource XyrohGreyDark}" HeightRequest="60" />
 
-                                <Image x:Name="ScreenShotImage"  Grid.Row="2"
-                                       WidthRequest="300" IsVisible="False" />
 
                             </Grid>
 
