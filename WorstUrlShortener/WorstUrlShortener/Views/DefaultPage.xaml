@@ -108,7 +108,9 @@
                                             TextColor="{DynamicResource XyrohGreyDark}"
                                             HeightRequest="60" />
 
-                                    <ImageButton WidthRequest="24" HeightRequest="24" Clicked="OnClipboardButtonClicked">
+                                    <ImageButton WidthRequest="24" HeightRequest="24"
+                                                 BackgroundColor="{DynamicResource XyrohOffWhite}"
+                                                 Clicked="OnClipboardButtonClicked">
                                         <ImageButton.Source>
                                             <FontImageSource FontFamily="{StaticResource FontIcons}"
                                                          Glyph="{StaticResource ClipboardIcon}"
