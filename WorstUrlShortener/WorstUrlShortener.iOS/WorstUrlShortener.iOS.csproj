@@ -62,6 +62,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -89,7 +90,6 @@
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%403x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%402x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone20%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x-1.png" />
@@ -107,6 +107,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad83%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
