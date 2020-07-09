@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="101" android:versionName="1.0.1" package="com.xyroh.worst.urlshortener">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="110" android:versionName="1.1.0" package="com.xyroh.worst.urlshortener">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<application android:label="Worst URL Shortener" android:icon="@drawable/icon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

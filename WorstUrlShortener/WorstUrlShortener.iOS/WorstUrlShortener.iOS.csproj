@@ -135,6 +135,11 @@
       <Project>{821EBFAA-2119-4A0D-B3F5-277168ED2661}</Project>
       <Name>WorstUrlShortener</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Share.iOS\Share.iOS.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}</Project>
+      <Name>Share.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json">
