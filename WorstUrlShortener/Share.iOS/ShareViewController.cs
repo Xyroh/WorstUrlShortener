@@ -1,8 +1,11 @@
 ﻿using System;
+using System.IO;
+using com.xyroh.lib;
 using CoreFoundation;
 using Foundation;
 using Social;
 using UIKit;
+using WorstUrlShortener.ViewModels;
 
 namespace Share.iOS
 {
@@ -11,6 +14,12 @@ namespace Share.iOS
         protected ShareViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
+            XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "sharedebug.txt"), 500000); // 0.5MB
+            XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
+            XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
+            XyrohLib.Log("**HERE**");
+
+            XyrohLib.LogEvent("Extension : Share ");
         }
 
         public override void DidReceiveMemoryWarning()
