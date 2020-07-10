@@ -96,30 +96,38 @@
                                        TextColor="{DynamicResource XyrohTealLight}"/>
 
 
+                                <Grid x:Name="CopyToClipBoardGrid" Grid.Row="4" VerticalOptions="CenterAndExpand" Margin="0"
+                                      IsVisible="false">
 
-                                <StackLayout x:Name="CopyToClipBoardStack"
-                                             IsVisible="false"
-                                             Orientation="Horizontal"
-                                             Grid.Row="4" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
 
-                                    <Editor x:Name="ShortURL" HorizontalOptions="FillAndExpand"
-                                            IsEnabled="false"
-                                            WidthRequest="30"
-                                            TextColor="{DynamicResource XyrohGreyDark}"
-                                            HeightRequest="60" />
+                                    <StackLayout Grid.Row="0" x:Name="CopyToClipBoardStack" Orientation="Horizontal">
 
-                                    <ImageButton WidthRequest="24" HeightRequest="24"
-                                                 BackgroundColor="{DynamicResource XyrohOffWhite}"
-                                                 Clicked="OnClipboardButtonClicked">
-                                        <ImageButton.Source>
-                                            <FontImageSource FontFamily="{StaticResource FontIcons}"
-                                                         Glyph="{StaticResource ClipboardIcon}"
-                                                         Color="{DynamicResource XyrohTealLight}"
-                                                         Size="24"/>
-                                        </ImageButton.Source>
-                                        </ImageButton>
+                                        <Editor x:Name="ShortURL" HorizontalOptions="FillAndExpand"
+                                                IsEnabled="false"
+                                                WidthRequest="30"
+                                                TextColor="{DynamicResource XyrohGreyDark}"
+                                                HeightRequest="60" />
 
-                                </StackLayout>
+                                        <ImageButton WidthRequest="24" HeightRequest="24"
+                                                     BackgroundColor="{DynamicResource XyrohOffWhite}"
+                                                     Clicked="OnShareButtonClicked">
+                                            <ImageButton.Source>
+                                                <FontImageSource FontFamily="{StaticResource FontIcons}"
+                                                             Glyph="{StaticResource ClipboardIcon}"
+                                                             Color="{DynamicResource XyrohTealLight}"
+                                                             Size="24"/>
+                                            </ImageButton.Source>
+                                            </ImageButton>
+
+                                    </StackLayout>
+                                    <Label Grid.Row="1" Text="(Your shortened URL has been copied to the clipboard)"
+                                           Font="Italic, 10" HorizontalTextAlignment="Center"
+                                           TextColor="{DynamicResource XyrohGreyDark}"/>
+                                </Grid>
 
                             </Grid>
 
