@@ -5,9 +5,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>Shorten Link</string>
 	<key>CFBundleName</key>
-	<string>Share.iOS</string>
+	<string>Action.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xyroh.worst.urlshortener.Share-iOS</string>
+	<string>com.xyroh.worst.urlshortener.Action-iOS</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -36,12 +36,14 @@
 				<true/>
 				<key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
 				<integer>1</integer>
+				<key>NSExtensionActivationUsesStrictMatching</key>
+				<false/>
 			</dict>
 		</dict>
-        <key>NSExtensionPrincipalClass</key>
-        <string>ActionViewController</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>ActionViewController</string>
 		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.share-services</string>
+		<string>com.apple.ui-services</string>
 	</dict>
 </dict>
 </plist>

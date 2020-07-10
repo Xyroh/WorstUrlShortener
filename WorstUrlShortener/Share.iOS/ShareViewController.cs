@@ -6,6 +6,8 @@ using Foundation;
 using Social;
 using UIKit;
 using WorstUrlShortener.ViewModels;
+using WorstUrlShortener.Views;
+using Xamarin.Forms;
 
 namespace Share.iOS
 {
@@ -35,6 +37,18 @@ namespace Share.iOS
             base.ViewDidLoad();
 
             // Do any additional setup after loading the view.
+            // Initialize Xamarin.Forms framework
+            global::Xamarin.Forms.Forms.Init();
+            // Create an instance of XF page with associated View Model
+            var xfPage = new TestPage();
+            //var viewModel = (MainPageViewModel)xfPage.BindingContext;
+            //viewModel.Message = "Welcome to XF Page created from an iOS Extension";
+            // Override the behavior to complete the execution of the Extension when a user press the button
+            //viewModel.DoCommand = new Command(() => DoneClicked(this));
+            // Convert XF page to a native UIViewController which can be consumed by the iOS Extension
+            var newController = xfPage.CreateViewController();
+            // Present new view controller as a regular view controller
+            this.PresentModalViewController(newController, false);
         }
 
         public override bool IsContentValid()

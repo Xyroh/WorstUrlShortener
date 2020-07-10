@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}</ProjectGuid>
+    <ProjectGuid>{7FC595AC-310C-43A0-AB54-A3D8E7AD395A}</ProjectGuid>
     <ProjectTypeGuids>{EE2C853D-36AF-4FDB-B1AD-8E90477E2198};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Share.iOS</RootNamespace>
-    <AssemblyName>Share.iOS</AssemblyName>
+    <RootNamespace>Action.iOS</RootNamespace>
+    <AssemblyName>Action.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -23,7 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>51001</IOSDebuggerPort>
+    <IOSDebuggerPort>21555</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
@@ -75,7 +75,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <IOSDebuggerPort>31169</IOSDebuggerPort>
+    <IOSDebuggerPort>24229</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
@@ -157,16 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainInterface.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ActionViewController.cs" />
-    <Compile Include="ActionViewController.designer.cs">
-      <DependentUpon>ActionViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShareViewController.cs" />
-    <Compile Include="ShareViewController.designer.cs">
-      <DependentUpon>ShareViewController.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WorstUrlShortener\WorstUrlShortener.csproj">
