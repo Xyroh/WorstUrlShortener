@@ -92,6 +92,12 @@ namespace WorstUrlShortener.Views
         private async void OnShareButtonClicked(object sender, EventArgs e)
         {
             XyrohLib.LogEvent("Shorten Page : Share Link");
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Uri = this.ShortURL.Text,
+                Title = "Shortened Link"
+            });
         }
 
         private void showResults()

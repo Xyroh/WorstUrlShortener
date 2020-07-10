@@ -117,7 +117,7 @@
                                                      Clicked="OnShareButtonClicked">
                                             <ImageButton.Source>
                                                 <FontImageSource FontFamily="{StaticResource FontIcons}"
-                                                             Glyph="{StaticResource ClipboardIcon}"
+                                                             Glyph="{StaticResource ShareIcon}"
                                                              Color="{DynamicResource XyrohTealLight}"
                                                              Size="24"/>
                                             </ImageButton.Source>

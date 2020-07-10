@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Added ability to share URL to the system #34
 ### Changed
+- Moved shortening to viewmodel and auto copies url clipboard #36
 ### Fixed
 ### Security
 ### Removed
