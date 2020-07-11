@@ -5,9 +5,6 @@
              xmlns:viewModels="clr-namespace:WorstUrlShortener.ViewModels;assembly=WorstUrlShortener"
              x:Class="WorstUrlShortener.Views.TestPage">
 
-    <ContentPage.BindingContext>
-        <viewModels:ExtensionViewModel Message="Hello from Xamarin.Forms!" />
-    </ContentPage.BindingContext>
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label

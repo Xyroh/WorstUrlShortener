@@ -60,7 +60,7 @@
       <SubType>Designer</SubType>
       <Generator></Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TestPage2.xaml">
+    <EmbeddedResource Update="Views\ShareExtensionPage.xaml">
       <SubType>Designer</SubType>
       <Generator></Generator>
     </EmbeddedResource>
@@ -94,8 +94,8 @@
       <DependentUpon>TestPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TestPage2.xaml.cs">
-      <DependentUpon>TestPage2.xaml</DependentUpon>
+    <Compile Update="Views\ShareExtensionPage.xaml.cs">
+      <DependentUpon>ShareExtensionPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

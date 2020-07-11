@@ -7,17 +7,6 @@ namespace WorstUrlShortener.ViewModels
 {
     public class ExtensionViewModel : ShortenViewModel
     {
-        private string message;
-
-        public string Message
-        {
-            get { return message; }
-
-            set
-            {
-                this.SetProperty(ref this.message, value, "Message");
-            }
-        }
 
         private ICommand finishedCmd;
 
@@ -38,7 +27,7 @@ namespace WorstUrlShortener.ViewModels
 
         private void OnFinishedCommandExecuted(object state)
         {
-            Message = $"Job {Environment.TickCount} has been completed!";
+
         }
     }
 }

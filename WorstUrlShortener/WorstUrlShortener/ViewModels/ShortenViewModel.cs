@@ -1,26 +1,93 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using com.xyroh.lib;
 using Newtonsoft.Json;
 using WorstUrlShortener.Models.Json;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace WorstUrlShortener.ViewModels
 {
     public class ShortenViewModel : BaseViewModel
     {
-        public async Task<string> Shorten(string service, string longUrl)
+        private ICommand shortenCmd;
+        private string shortenService = "TinyUrl";
+        private List<string> shortenServices;
+        private string longURL = "https://xyroh.com";
+        private string shortURL;
+        private bool hasResults = false;
+
+        public ICommand ShortenCommand
         {
+            get { return this.shortenCmd; }
+
+            set
+            {
+                this.SetProperty(ref this.shortenCmd, value, "ShortenCommand");
+            }
+        }
+
+        public string ShortenService
+        {
+            get => this.shortenService;
+            set => this.SetProperty(ref this.shortenService, value, "ShortenService");
+        }
+
+        public List<string> ShortenServices
+        {
+            get => this.shortenServices;
+            set => this.SetProperty(ref this.shortenServices, value, "ShortenServices");
+        }
+
+        public string LongURL
+        {
+            get => this.longURL;
+            set => this.SetProperty(ref this.longURL, value, "LongURL");
+        }
+
+        public string ShortURL
+        {
+            get => this.shortURL;
+            set => this.SetProperty(ref this.shortURL, value, "ShortURL");
+        }
+
+        public bool HasResults
+        {
+            get => this.hasResults;
+            set => this.SetProperty(ref this.hasResults, value, "HasResults");
+        }
+
+        public ShortenViewModel()
+        {
+            this.ShortenCommand = new Command(this.OnShortenCommandExecuted);
+
+            this.ShortenServices = new List<string>();
+            this.ShortenServices.Add("TinyUrl");
+            this.ShortenServices.Add("Goo.gl");
+
+        }
+
+        private async void OnShortenCommandExecuted(object state)
+        {
+            XyrohLib.Log("SERVICE: " + this.ShortenService);
+            XyrohLib.Log("URL: " + this.LongURL);
+
             var shortenedURl = string.Empty;
-            switch (service)
+            this.ShortURL = shortenedURl;
+            this.HasResults = false;
+
+            switch (this.shortenService)
             {
                 default:
                 case "TinyUrl":
                 {
                     var client = new HttpClient();
-                    var url = "http://tinyurl.com/api-create.php?url=" + longUrl;
+                    var url = "http://tinyurl.com/api-create.php?url=" + this.LongURL;
+                    XyrohLib.Log("REQUEST: " + url);
                     client.Timeout = TimeSpan.FromSeconds(5);
 
                     try
@@ -56,7 +123,7 @@ namespace WorstUrlShortener.ViewModels
                     {
                         var json = new FirebaseLinkRequest();
                         json.longDynamicLink = SettingsViewModel.FirebaseURLDomain + "/?link=" +
-                                               longUrl + "&apn=" + AppInfo.PackageName + "&ibi=" +
+                                               this.LongURL + "&apn=" + AppInfo.PackageName + "&ibi=" +
                                                AppInfo.PackageName;
 
                         XyrohLib.Log("JSON: " + JsonConvert.SerializeObject(json));
@@ -87,7 +154,14 @@ namespace WorstUrlShortener.ViewModels
                 }
             }
 
-            return shortenedURl;
+            this.ShortURL = shortenedURl;
+            if (!string.IsNullOrEmpty(this.ShortURL))
+            {
+                await Clipboard.SetTextAsync(shortenedURl);
+                this.HasResults = true;
+                XyrohLib.Log("Final: " + this.ShortURL);
+            }
+
         }
     }
 }

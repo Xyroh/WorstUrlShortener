@@ -28,65 +28,13 @@ namespace WorstUrlShortener.Views
             this.BindingContext = this.viewModel;
             this.InitializeComponent();
 
-            this.URLShortener.SelectedIndex = 0;
-        }
-
-        private async void OnShortenButtonClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                XyrohLib.LogEvent("Shorten Page : Shorten Clicked");
-
-                this.ShortenButton.IsEnabled = false;
-
-                if (this.URLShortener.SelectedItem == null)
-                {
-                    await this.DisplayAlert("Oops!", "Please select a URL Shortener to user", "OK");
-                }
-                else
-                {
-                    // todo move to videmodel if becomes too unwieldly
-
-                    XyrohLib.Log("Shortener: " + this.URLShortener.SelectedItem.ToString());
-                    XyrohLib.Log("Full: " + this.FullURL.Text);
-
-                    var dict = new Dictionary<string, string>();
-                    dict.Add("Shortener", this.URLShortener.SelectedItem.ToString());
-                    XyrohLib.LogEvent("Shorten Page : Shorten", dict);
-
-                    var shortenedURl =
-                        await this.viewModel.Shorten(this.URLShortener.SelectedItem.ToString(), this.FullURL.Text);
-
-                    if (!string.IsNullOrEmpty(shortenedURl))
-                    {
-                        this.ShortURL.IsVisible = true;
-                        this.ShortURL.Text = shortenedURl;
-
-                        XyrohLib.LogEvent("Shorten Page : Copy to Clipboard");
-                        await Clipboard.SetTextAsync(this.ShortURL.Text);
-
-                        this.showResults();
-                    }
-                    else
-                    {
-                        await this.DisplayAlert("Oops", this.viewModel.LastError, "OK");
-                        this.ShortenButton.IsEnabled = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                XyrohLib.LogCrash(ex);
-
-                await this.DisplayAlert("Error", "Error: " + ex.Message, "OK");
-                this.ShortenButton.IsEnabled = true;
-            }
         }
 
         private void OnFullURLFocused(object sender, FocusEventArgs e)
         {
             // reset page as assume new request
-            this.hideResults();
+            this.viewModel.HasResults = false;
+            this.viewModel.ShortURL = string.Empty;
         }
 
         private async void OnShareButtonClicked(object sender, EventArgs e)
@@ -95,18 +43,17 @@ namespace WorstUrlShortener.Views
 
             await Share.RequestAsync(new ShareTextRequest
             {
-                Uri = this.ShortURL.Text,
+                Uri = this.viewModel.ShortURL,
                 Title = "Shortened Link"
             });
         }
 
-        private void showResults()
+        /*private void showResults()
         {
             this.CopyToClipBoardGrid.IsVisible = true;
             this.ResultsLabel.IsVisible = true;
             this.ShortenButton.IsEnabled = true;
 
-            // TODO - Show 'shared to clipboard message'
         }
 
         private void hideResults()
@@ -114,7 +61,7 @@ namespace WorstUrlShortener.Views
             this.CopyToClipBoardGrid.IsVisible = false;
             this.ResultsLabel.IsVisible = false;
             this.ShortenButton.IsEnabled = true;
-        }
+        }*/
 
         protected override void OnAppearing()
         {

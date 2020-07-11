@@ -3,11 +3,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:WorstUrlShortener.Utilities.Converters"
-             x:Class="WorstUrlShortener.Views.DefaultPage">
+             x:Class="WorstUrlShortener.Views.ShareExtensionPage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:NegateBooleanConverter x:Key="negateBooleanConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -38,7 +41,7 @@
 
                             <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
                                         JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
-                                <Label  Text="'Worst' URL Shortener" Font="Normal, 24"
+                                <Label  Text="Share to 'Worst' URL Shortener" Font="Normal, 24"
                                        BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
 
                             </FlexLayout>
@@ -50,8 +53,8 @@
                                    IsVisible="{Binding IsOnline, Converter={StaticResource negateBooleanConverter}}" />
 
                             <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
-                                   Text="Simply choose the URL Shortening service to use, enter your URL, and click the button to generate and use your new, shortened, URL."
-                                   Font="Normal, 12"
+                                   Text="Simply choose the URL Shortening service to use, click the button to generate your new, shortened, URL, and we'll copy it to the clipboard ready to go"
+                                   Font="Normal, 14"
                                    TextColor="{DynamicResource textColorDarkTeal}"
                                    IsVisible="{Binding IsOnline}" />
 
@@ -60,10 +63,10 @@
 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="20" />
-                                    <RowDefinition Height="50" />
-                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
                                     <RowDefinition Height="30" />
-                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="40" />
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
@@ -75,16 +78,16 @@
                                        TextColor="{DynamicResource XyrohTealLight}"/>
 
                                 <Picker x:Name="URLShortener" Grid.Row="1"
+                                        FontSize="14"
                                         ItemsSource="{Binding ShortenServices}"
                                         SelectedItem="{Binding ShortenService}"
-                                        FontSize="14"
                                         Title="Tap to pick URL Shortener" TitleColor="{DynamicResource XyrohTealLight}" TextColor="{DynamicResource XyrohGreyDark}">
                                 </Picker>
 
 
                                 <Entry x:Name="FullURL" Grid.Row="2"
                                        Text = "{Binding LongURL}"
-                                       FontSize="12"
+                                       FontSize="14"
                                        Placeholder="URL to Shorten"
                                        PlaceholderColor="{DynamicResource XyrohTealLight }"
                                        Focused="OnFullURLFocused"
@@ -106,26 +109,15 @@
 
                                     <StackLayout Grid.Row="0" x:Name="CopyToClipBoardStack" Orientation="Horizontal">
 
-                                        <Entry Text = "{Binding ShortURL}"
-                                               FontSize="14"
+                                        <Entry Text = "{Binding ShortURL, Mode=TwoWay}"
                                                IsEnabled="false"
+                                               FontSize="12"
                                                HorizontalOptions="FillAndExpand" WidthRequest="30"
                                                TextColor="{DynamicResource XyrohGreyDark}" />
 
-                                        <ImageButton WidthRequest="24" HeightRequest="24"
-                                                     BackgroundColor="{DynamicResource XyrohOffWhite}"
-                                                     Clicked="OnShareButtonClicked">
-                                            <ImageButton.Source>
-                                                <FontImageSource FontFamily="{StaticResource FontIcons}"
-                                                             Glyph="{StaticResource ShareIcon}"
-                                                             Color="{DynamicResource XyrohTealLight}"
-                                                             Size="24"/>
-                                            </ImageButton.Source>
-                                            </ImageButton>
-
                                     </StackLayout>
                                     <Label Grid.Row="1" Text="(Your shortened URL has been copied to the clipboard)"
-                                           Font="Italic, 10" HorizontalTextAlignment="Center"
+                                           Font="Italic, 12" HorizontalTextAlignment="Center"
                                            TextColor="{DynamicResource XyrohGreyDark}"/>
                                 </Grid>
 
@@ -136,8 +128,11 @@
 
                         <ContentView Padding="5,100,5,5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
                             <StackLayout Orientation="Horizontal">
-                                <Button x:Name="ShortenButton" Text="Shorten" Font="Normal, 20"
+                                <Button x:Name="ShortenButton" Text="Shorten" Font="Normal, 24"
                                         TextColor="{DynamicResource XyrohTealDark}" Command="{Binding ShortenCommand}" />
+
+                                <Button x:Name="CloseButton" Text="Close" Font="Normal, 24" IsVisible="True"
+                                        TextColor="{DynamicResource XyrohTealDark}" Command="{Binding FinishedCommand}" />
 
                             </StackLayout>
                         </ContentView>
