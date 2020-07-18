@@ -31,7 +31,7 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>'Worst' Url Shortener</string>
+	<string>&apos;Worst&apos; Url Shortener</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.xyroh.worst.urlshortener</string>
 	<key>CFBundleVersion</key>
