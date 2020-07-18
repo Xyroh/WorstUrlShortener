@@ -15,6 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 ### Removed
 
+## [1.1.0 - July 2020]
+### Added
+- Added ability to share URL to the system #34
+- Added iOS Share Extension support closes #35
+### Changed
+- Moved shortening to viewmodel and auto copies url clipboard #36
+- Renamed Goo.gl to Firebase
+
 ## [1.0.0 - June 2020]
 ### Added
 - Initial Release with TinyURL and Goo.gl (Now Firebase) Support
