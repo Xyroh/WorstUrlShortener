@@ -67,7 +67,7 @@ namespace WorstUrlShortener.ViewModels
 
             this.ShortenServices = new List<string>();
             this.ShortenServices.Add("TinyUrl");
-            this.ShortenServices.Add("Goo.gl");
+            this.ShortenServices.Add("Firebase");
 
         }
 
@@ -113,7 +113,7 @@ namespace WorstUrlShortener.ViewModels
                     }
                     break;
                 }
-                case "Goo.gl":
+                case "Firebase":
                 {
                     var client = new HttpClient();
                     var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + SettingsViewModel.FirebaseAPIKey.ToString();

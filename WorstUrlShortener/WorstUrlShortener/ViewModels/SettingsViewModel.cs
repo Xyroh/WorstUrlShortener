@@ -17,6 +17,17 @@ namespace WorstUrlShortener.ViewModels
         public static string ReleaseNotesMonitor
         {
             get => Preferences.Get("ReleaseNotesMonitor", @"
+[1.1.0 - July 2020]
+
+Added
+- Added ability to share URL to the system
+- Added iOS Share Extension support
+
+Changed
+- Moved shortening to viewmodel and auto copies url clipboard
+- Renamed Goo.gl to Firebase
+
+
 [1.0.0 - June 2020]
 
 Added

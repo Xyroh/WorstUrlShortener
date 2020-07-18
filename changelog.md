@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added iOS Share Extension support closes #35
 ### Changed
 - Moved shortening to viewmodel and auto copies url clipboard #36
+- Renamed Goo.gl to Firebase
 ### Fixed
 ### Security
 ### Removed
