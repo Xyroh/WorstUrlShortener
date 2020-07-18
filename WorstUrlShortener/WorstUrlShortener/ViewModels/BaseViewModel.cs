@@ -8,8 +8,6 @@ namespace WorstUrlShortener.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
-
         private string propTitle = string.Empty;
         private bool isBusy;
         private bool isOnline;
@@ -93,6 +91,5 @@ namespace WorstUrlShortener.ViewModels
 
             XyrohLib.Log("ONLINE CHANGE - NOW: " + this.IsOnline);
         }
-
     }
 }

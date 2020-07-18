@@ -31,11 +31,11 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>WorstUrlShortener</string>
+	<string>&apos;Worst&apos; Url Shortener</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.xyroh.worst.urlshortener</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
@@ -62,6 +62,6 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.1.0</string>
 </dict>
 </plist>

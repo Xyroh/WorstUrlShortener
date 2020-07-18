@@ -60,6 +60,10 @@
       <SubType>Designer</SubType>
       <Generator></Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShareExtensionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   
@@ -85,6 +89,13 @@
     </Compile>
     <Compile Update="Views\ReleaseNotesPage.xaml.cs">
       <DependentUpon>ReleaseNotesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ShareExtensionPage.xaml.cs">
+      <DependentUpon>ShareExtensionPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

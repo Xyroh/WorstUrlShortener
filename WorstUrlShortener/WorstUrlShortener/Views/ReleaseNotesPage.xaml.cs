@@ -16,7 +16,7 @@ namespace WorstUrlShortener.Views
         {
             this.InitializeComponent();
 
-            ReleaseNotesEditor.Text = SettingsViewModel.ReleaseNotesMonitor;
+            this.ReleaseNotesEditor.Text = SettingsViewModel.ReleaseNotesMonitor;
         }
     }
 }

@@ -60,7 +60,6 @@ namespace WorstUrlShortener.Views
             XyrohLib.LogEvent("Help : Support : Tapped");
 
             await this.Navigation.PushAsync(new SupportPage("Raise a Support Ticket"));
-
         }
 
         protected async void OnIdeaCellTapped(object sender, EventArgs e)
