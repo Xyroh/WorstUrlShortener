@@ -117,7 +117,7 @@
 
                                     </StackLayout>
                                     <Label Grid.Row="1" Text="(Your shortened URL has been copied to the clipboard)"
-                                           Font="Italic, 12" HorizontalTextAlignment="Center"
+                                           Font="Italic, 10" HorizontalTextAlignment="Center"
                                            TextColor="{DynamicResource XyrohGreyDark}"/>
                                 </Grid>
 
