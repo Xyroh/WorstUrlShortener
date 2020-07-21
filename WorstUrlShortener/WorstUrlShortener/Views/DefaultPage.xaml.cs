@@ -28,6 +28,11 @@ namespace WorstUrlShortener.Views
             this.BindingContext = this.viewModel;
             this.InitializeComponent();
 
+            if (!string.IsNullOrEmpty(App.SharedURL))
+            {
+                this.viewModel.LongURL = App.SharedURL;
+            }
+
         }
 
         private void OnFullURLFocused(object sender, FocusEventArgs e)
