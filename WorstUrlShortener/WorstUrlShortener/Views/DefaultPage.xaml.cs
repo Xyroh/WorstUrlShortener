@@ -37,7 +37,7 @@ namespace WorstUrlShortener.Views
             this.viewModel.ShortURL = string.Empty;
         }
 
-        private async void OnShareButtonClicked(object sender, EventArgs e)
+        /*private async void OnShareButtonClicked(object sender, EventArgs e)
         {
             XyrohLib.LogEvent("Shorten Page : Share Link");
 
@@ -46,7 +46,7 @@ namespace WorstUrlShortener.Views
                 Uri = this.viewModel.ShortURL,
                 Title = "Shortened Link"
             });
-        }
+        }*/
 
         /*private void showResults()
         {

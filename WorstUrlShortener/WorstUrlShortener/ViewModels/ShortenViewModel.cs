@@ -15,6 +15,8 @@ namespace WorstUrlShortener.ViewModels
     public class ShortenViewModel : BaseViewModel
     {
         private ICommand shortenCmd;
+        private ICommand shareCmd;
+
         private string shortenService = "TinyUrl";
         private List<string> shortenServices;
         private string longURL = "https://xyroh.com";
@@ -28,6 +30,16 @@ namespace WorstUrlShortener.ViewModels
             set
             {
                 this.SetProperty(ref this.shortenCmd, value, "ShortenCommand");
+            }
+        }
+
+        public ICommand ShareCommand
+        {
+            get { return this.shareCmd; }
+
+            set
+            {
+                this.SetProperty(ref this.shareCmd, value, "ShareCommand");
             }
         }
 
@@ -64,6 +76,7 @@ namespace WorstUrlShortener.ViewModels
         public ShortenViewModel()
         {
             this.ShortenCommand = new Command(this.OnShortenCommandExecuted);
+            this.ShareCommand = new Command(this.OnShareCommandExecuted);
 
             this.ShortenServices = new List<string>();
             this.ShortenServices.Add("TinyUrl");
@@ -162,6 +175,17 @@ namespace WorstUrlShortener.ViewModels
                 XyrohLib.Log("Final: " + this.ShortURL);
             }
 
+        }
+
+        private async void OnShareCommandExecuted(object state)
+        {
+            XyrohLib.LogEvent("Shorten Page : Share Link");
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Uri = this.ShortURL,
+                Title = "Shortened Link"
+            });
         }
     }
 }
