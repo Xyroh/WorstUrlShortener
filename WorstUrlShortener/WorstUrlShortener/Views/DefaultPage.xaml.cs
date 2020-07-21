@@ -28,6 +28,11 @@ namespace WorstUrlShortener.Views
             this.BindingContext = this.viewModel;
             this.InitializeComponent();
 
+            if (!string.IsNullOrEmpty(App.SharedURL))
+            {
+                this.viewModel.LongURL = App.SharedURL;
+            }
+
         }
 
         private void OnFullURLFocused(object sender, FocusEventArgs e)
@@ -37,7 +42,7 @@ namespace WorstUrlShortener.Views
             this.viewModel.ShortURL = string.Empty;
         }
 
-        private async void OnShareButtonClicked(object sender, EventArgs e)
+        /*private async void OnShareButtonClicked(object sender, EventArgs e)
         {
             XyrohLib.LogEvent("Shorten Page : Share Link");
 
@@ -46,7 +51,7 @@ namespace WorstUrlShortener.Views
                 Uri = this.viewModel.ShortURL,
                 Title = "Shortened Link"
             });
-        }
+        }*/
 
         /*private void showResults()
         {

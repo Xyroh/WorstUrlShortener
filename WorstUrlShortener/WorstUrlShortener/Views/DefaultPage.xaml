@@ -23,39 +23,26 @@
                     <StackLayout Padding="10" Margin="10"
                                  BackgroundColor="{DynamicResource XyrohOffWhite}" Orientation="Vertical">
 
-                        <Grid VerticalOptions="FillAndExpand" Margin="10">
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="2*" />
-                            </Grid.RowDefinitions>
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-
-                            <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
-                                        JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
+                        <FlexLayout Direction="Row" AlignItems="Center"
+                                    JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
                                 <Label  Text="'Worst' URL Shortener" Font="Normal, 24"
                                        BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
 
                             </FlexLayout>
 
-                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                            <Label HorizontalTextAlignment="Center"
                                    Text="The URL Shortener requires an active Internet Connection, please move to an area with a good active connection."
                                    Font="Normal, 12"
                                    TextColor="{DynamicResource textColorDarkTeal}"
                                    IsVisible="{Binding IsOnline, Converter={StaticResource negateBooleanConverter}}" />
 
-                            <Label Grid.ColumnSpan="1" Grid.Row="1" HorizontalTextAlignment="Center"
+                            <Label HorizontalTextAlignment="Center"
                                    Text="Simply choose the URL Shortening service to use, enter your URL, and click the button to generate and use your new, shortened, URL."
                                    Font="Normal, 12"
                                    TextColor="{DynamicResource textColorDarkTeal}"
                                    IsVisible="{Binding IsOnline}" />
 
-                            <Grid Grid.ColumnSpan="1" Grid.Row="2" VerticalOptions="CenterAndExpand" Margin="0"
+                            <Grid VerticalOptions="CenterAndExpand" Margin="0"
                                   IsVisible="{Binding IsOnline}">
 
                                 <Grid.RowDefinitions>
@@ -107,21 +94,21 @@
                                     <StackLayout Grid.Row="0" x:Name="CopyToClipBoardStack" Orientation="Horizontal">
 
                                         <Entry Text = "{Binding ShortURL}"
-                                               FontSize="14" 
+                                               FontSize="14"
                                                IsEnabled="false"
                                                HorizontalOptions="FillAndExpand" WidthRequest="30"
                                                TextColor="{DynamicResource XyrohGreyDark}" />
 
                                         <ImageButton WidthRequest="24" HeightRequest="24"
                                                      BackgroundColor="{DynamicResource XyrohOffWhite}"
-                                                     Clicked="OnShareButtonClicked">
+                                                     Command="{Binding ShareCommand}">
                                             <ImageButton.Source>
                                                 <FontImageSource FontFamily="{StaticResource FontIcons}"
                                                              Glyph="{StaticResource ShareIcon}"
                                                              Color="{DynamicResource XyrohTealLight}"
                                                              Size="24"/>
                                             </ImageButton.Source>
-                                            </ImageButton>
+                                        </ImageButton>
 
                                     </StackLayout>
                                     <Label Grid.Row="1" Text="(Your shortened URL has been copied to the clipboard)"
@@ -132,13 +119,10 @@
                             </Grid>
 
 
-                        </Grid>
-
                         <ContentView Padding="5,100,5,5" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
                             <StackLayout Orientation="Horizontal">
                                 <Button x:Name="ShortenButton" Text="Shorten" Font="Normal, 20"
                                         TextColor="{DynamicResource XyrohTealDark}" Command="{Binding ShortenCommand}" />
-
                             </StackLayout>
                         </ContentView>
 

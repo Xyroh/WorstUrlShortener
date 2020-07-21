@@ -18,7 +18,7 @@ namespace WorstUrlShortener.iOS
             AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionHandler;
             TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
 
-            this.LoadApplication(new App());
+            this.LoadApplication(new App(string.Empty));
 
             return base.FinishedLaunching(app, options);
         }
