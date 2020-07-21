@@ -37,6 +37,9 @@ That's about it, play, break it, imporve it and make millions, all up to you.
 ## Bugs or Feature Requests?
 Just create an issue and we'll get back to you
 
+## Credits
+Creit to Alex Muench for the [iOS and iPad Appstore Artwork artboards in Sketch](https://www.sketchappsources.com/contributor/alexmuench)
+
 ## Contributing
 We welcome all contributions and will acknowledge them here, please ensure you have read and agreed to our [code of conduct](CODE_OF_CONDUCT.md) and understood our [contributing guidelines](CONTRIBUTING.md) prior to jumping in
 

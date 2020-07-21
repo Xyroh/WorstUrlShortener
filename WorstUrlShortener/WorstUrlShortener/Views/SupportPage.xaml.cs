@@ -19,6 +19,8 @@ namespace WorstUrlShortener.Views
 
         private string pageTitle = "Raise a Support Ticket";
 
+        private BaseViewModel viewModel = new BaseViewModel();
+
         public SupportPage(string title, byte[] imageArray)
         {
             XyrohLib.LogEvent("Page : Support : With Screenshot");
@@ -57,19 +59,18 @@ namespace WorstUrlShortener.Views
 
         private async void Init()
         {
-            this.BindingContext = App.ViewModel;
+            this.BindingContext = this.viewModel;
             this.InitializeComponent();
 
             this.SupportPageTitle.Text = this.pageTitle;
             this.TicketSubject.Text = "'Worst' URL Shortener Support Request - " + VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild;
-
         }
 
         private async void OnSendTicketButtonClicked(object sender, EventArgs e)
         {
             try
             {
-                if(string.IsNullOrEmpty(this.TicketEmail.Text) || string.IsNullOrEmpty(this.TicketSubject.Text) || string.IsNullOrEmpty(this.TicketDescription.Text))
+                if (string.IsNullOrEmpty(this.TicketEmail.Text) || string.IsNullOrEmpty(this.TicketSubject.Text) || string.IsNullOrEmpty(this.TicketDescription.Text))
                 {
                     await this.DisplayAlert("Oops", "Please ensure all fields are completed", "OK");
                 }
@@ -101,7 +102,6 @@ namespace WorstUrlShortener.Views
                         throw new Exception("Couldn't create Ticket - Please try again");
                     }
                 }
-
             }
             catch (Exception ex)
             {

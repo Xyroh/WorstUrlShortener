@@ -14,6 +14,5 @@ namespace WorstUrlShortener.Views
         {
             this.InitializeComponent();
         }
-
     }
 }

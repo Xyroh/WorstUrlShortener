@@ -25,7 +25,7 @@
     <Color x:Key="XyrohTealDark">#387877</Color>
     <Color x:Key="XyrohGreyDark">#646464</Color>
 
-
+    <!-- https://andreinitescu.github.io/IconFont2Code/ -->
     <x:String x:Key="SettingsIcon">&#xe72b;</x:String>
     <x:String x:Key="VideoIcon">&#xe718;</x:String>
     <x:String x:Key="HelpIcon">&#xe72c;</x:String>
@@ -34,6 +34,7 @@
     <x:String x:Key="CloseIcon">&#xe724;</x:String>
     <x:String x:Key="BurgerIcon">&#xe72e;</x:String>
     <x:String x:Key="ClipboardIcon">&#xe737;</x:String>
+    <x:String x:Key="ShareIcon">&#xe704;</x:String>
 
     <Color x:Key="Gray-100">#f6f7f8</Color>
     <Color x:Key="Gray-200">#ebecef</Color>

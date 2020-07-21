@@ -28,6 +28,9 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignExtraArgs></CodesignExtraArgs>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>Apple Development: Andy Flisher (H5ZATUEE8L)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -35,8 +38,11 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>Apple Development: Andy Flisher (H5ZATUEE8L)</CodesignKey>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,11 +53,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Andy Flisher (H5ZATUEE8L)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -60,8 +67,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: Andy Flisher (H5ZATUEE8L)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type</MtouchExtraArgs>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -89,24 +98,24 @@
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%403x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder%402x.png" />
     <ImageAsset Include="Assets.xcassets\Idea.imageset\IdeaIconNoBorder.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone20%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone29%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%402x-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%403x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone20%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone29%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone60%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x-2.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad29%402x-2.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad20%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPhone40%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad83%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad76%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-iPad83%402x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -133,6 +142,11 @@
     <ProjectReference Include="..\WorstUrlShortener\WorstUrlShortener.csproj">
       <Project>{821EBFAA-2119-4A0D-B3F5-277168ED2661}</Project>
       <Name>WorstUrlShortener</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Share.iOS\Share.iOS.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}</Project>
+      <Name>Share.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
