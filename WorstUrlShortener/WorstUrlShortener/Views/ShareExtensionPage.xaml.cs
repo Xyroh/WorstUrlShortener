@@ -38,21 +38,6 @@ namespace WorstUrlShortener.Views
             this.viewModel.ShortURL = string.Empty;
         }
 
-        /*private void showResults()
-        {
-            this.CopyToClipBoardGrid.IsVisible = true;
-            this.ResultsLabel.IsVisible = true;
-            this.ShortenButton.IsEnabled = true;
-
-            // TODO - Show 'shared to clipboard message'
-        }
-
-        private void hideResults()
-        {
-            this.CopyToClipBoardGrid.IsVisible = false;
-            this.ResultsLabel.IsVisible = false;
-            this.ShortenButton.IsEnabled = true;
-        }*/
 
     }
 }

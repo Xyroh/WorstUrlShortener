@@ -16,8 +16,9 @@ namespace WorstUrlShortener
     public partial class App : Application
     {
         public static string ImagesStore;
+        public static string SharedURL = string.Empty;
 
-        public App()
+        public App(string sharedURL)
         {
             this.InitializeComponent();
 
@@ -47,6 +48,11 @@ namespace WorstUrlShortener
                 XyrohLib.LogCrash(ex);
             }
 
+            if (!string.IsNullOrEmpty(sharedURL))
+            {
+                XyrohLib.Log(sharedURL);
+                App.SharedURL = sharedURL;
+            }
             // this.MainPage = new MainPage();
             this.MainPage = new NavigationPage(new MainPage());
         }
