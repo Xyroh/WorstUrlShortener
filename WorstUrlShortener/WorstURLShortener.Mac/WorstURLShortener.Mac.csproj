@@ -103,20 +103,23 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-AppStore.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac16%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac16%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac32%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac128%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac256%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac256%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-Mac128%402x-1.png" />
+    <ImageAsset Include="Assets.xcassets\TrayIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\TrayIcon.imageset\icon-Mac16.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\TrayIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

@@ -82,14 +82,17 @@ namespace WorstUrlShortener.Views
 
         protected override void OnAppearing()
         {
-            try
+            if (Device.RuntimePlatform != "macOS")
             {
-                Accelerometer.ShakeDetected += this.OnShaked;
-                Accelerometer.Start(SensorSpeed.Default);
-            }
-            catch (FeatureNotSupportedException featEx)
-            {
-                // for the emulator as not supported
+                try
+                {
+                    Accelerometer.ShakeDetected += this.OnShaked;
+                    Accelerometer.Start(SensorSpeed.Default);
+                }
+                catch (FeatureNotSupportedException featEx)
+                {
+                    // for the emulator as not supported
+                }
             }
 
             base.OnAppearing();
@@ -97,14 +100,17 @@ namespace WorstUrlShortener.Views
 
         protected override void OnDisappearing()
         {
-            try
+            if (Device.RuntimePlatform != "macOS")
             {
-                Accelerometer.Stop();
-                Accelerometer.ShakeDetected -= this.OnShaked;
-            }
-            catch (FeatureNotSupportedException featEx)
-            {
-                // for the emulator as not supported
+                try
+                {
+                    Accelerometer.Stop();
+                    Accelerometer.ShakeDetected -= this.OnShaked;
+                }
+                catch (FeatureNotSupportedException featEx)
+                {
+                    // for the emulator as not supported
+                }
             }
 
             base.OnDisappearing();

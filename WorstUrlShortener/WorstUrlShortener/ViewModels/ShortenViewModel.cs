@@ -170,7 +170,11 @@ namespace WorstUrlShortener.ViewModels
             this.ShortURL = shortenedURl;
             if (!string.IsNullOrEmpty(this.ShortURL))
             {
-                await Clipboard.SetTextAsync(shortenedURl);
+                if (Device.RuntimePlatform != "macOS")
+                {
+                    await Clipboard.SetTextAsync(shortenedURl);
+                }
+
                 this.HasResults = true;
                 XyrohLib.Log("Final: " + this.ShortURL);
             }
@@ -181,11 +185,10 @@ namespace WorstUrlShortener.ViewModels
         {
             XyrohLib.LogEvent("Shorten Page : Share Link");
 
-            await Share.RequestAsync(new ShareTextRequest
+            if (Device.RuntimePlatform != "macOS")
             {
-                Uri = this.ShortURL,
-                Title = "Shortened Link"
-            });
+                await Share.RequestAsync(new ShareTextRequest {Uri = this.ShortURL, Title = "Shortened Link"});
+            }
         }
     }
 }

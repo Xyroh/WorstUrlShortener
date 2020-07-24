@@ -4,6 +4,7 @@ using AppKit;
 using Foundation;
 using com.xyroh.lib;
 using WorstUrlShortener;
+using WorstUrlShortener.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
@@ -28,26 +29,33 @@ namespace WorstURLShortener.Mac
             // Create the status bar item
             var statusBar = NSStatusBar.SystemStatusBar;
             this.statusBarItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
-            this.statusBarItem.Button.Image = NSImage.ImageNamed("TrayIcon.ico");
+            this.statusBarItem.Button.Image = NSImage.ImageNamed("TrayIcon");
+            this.statusBarItem.Button.Action = new ObjCRuntime.Selector("MenuAction:");
 
             // Listen to touches on the status bar item
-            this.statusBarItem.SendActionOn(NSTouchPhase.Any);
-            this.statusBarItem.Action = new ObjCRuntime.Selector("MenuAction:");
+            this.statusBarItem.Button.SendActionOn(NSEventType.OtherMouseUp);
+            this.statusBarItem.Button.Activated += this.StatusBarActivated;
 
             // Create the menu that gets opened on a right click
             this.menu = new NSMenu();
             var closeAppItem = new NSMenuItem("Close");
-            //closeAppItem.Activated += CloseAppItem_Activated;
+            closeAppItem.Activated += this.CloseMenuActivated;
             this.menu.AddItem(closeAppItem);
+            //this.statusBarItem.Menu = this.menu;
         }
 
-        private void StatusItemActivated(object sender, EventArgs e)
+        private void CloseMenuActivated(object sender, EventArgs e)
+        {
+            NSApplication.SharedApplication.Terminate(this);
+        }
+
+        private void StatusBarActivated(object sender, EventArgs e)
         {
             var currentEvent = NSApplication.SharedApplication.CurrentEvent;
             switch (currentEvent.Type)
             {
                 case NSEventType.LeftMouseDown:
-                    ShowWindow();
+                    this.ShowWindow();
                     break;
                 case NSEventType.RightMouseDown:
                     this.statusBarItem.PopUpStatusItemMenu(this.menu);
@@ -57,11 +65,14 @@ namespace WorstURLShortener.Mac
 
         private void ShowWindow()
         {
+            XyrohLib.LogEvent("Showing Window","Mac");
             if(this.mainPage == null)
             {
                 // If you dont need a navigation bar, just use this line
-                this.mainPage = Application.Current.MainPage.CreateViewController();
-                this.mainPage.View.Frame = new CoreGraphics.CGRect(0, 0, 400, 700);
+                //this.mainPage = Application.Current.MainPage.CreateViewController();
+                var xfPage = new DefaultPage();
+                this.mainPage = xfPage.CreateViewController();
+                this.mainPage.View.Frame = new CoreGraphics.CGRect(0, 0, 400, 500);
 
                 Application.Current.SendStart();
             }
