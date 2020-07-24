@@ -19,19 +19,26 @@ namespace WorstUrlShortener
             this.InitializeComponent();
 
             // XyrohLib Crash handler Setup
-            XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "debug.txt"), 500000); // 0.5MB
-            XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
+            XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "debug.txt"),500000); // 0.5MB
+            XyrohLib.Log("Platform: " + Device.RuntimePlatform.ToString());
+            if (Device.RuntimePlatform != "macOS")
+            {
+                XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
 
-            #if DEBUG
-            // XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
-            #else
+                #if DEBUG
+                // XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
+                #else
 				XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
-            #endif
+                #endif
 
-            // Freshdesk
-            XyrohLib.SetHelpDesk(SettingsViewModel.FreshDeskURL, SettingsViewModel.FreshDeskKey, "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
+                // Freshdesk
+                XyrohLib.SetHelpDesk(SettingsViewModel.FreshDeskURL, SettingsViewModel.FreshDeskKey,
+                    "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
 
-            VersionTracking.Track();
+                VersionTracking.Track();
+            }
+
+
 
             // filesystem prep
             try

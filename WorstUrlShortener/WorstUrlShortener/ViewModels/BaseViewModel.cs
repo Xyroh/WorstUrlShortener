@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using com.xyroh.lib;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace WorstUrlShortener.ViewModels
 {
@@ -16,21 +17,25 @@ namespace WorstUrlShortener.ViewModels
 
         public BaseViewModel()
         {
-            var connectivity = Connectivity.NetworkAccess;
-
-            if (connectivity == NetworkAccess.Internet)
+            if (Device.RuntimePlatform != "macOS")
             {
-                // Connection to internet is available
-                this.IsOnline = true;
-            }
-            else
-            {
-                this.IsOnline = false;
+                var connectivity = Connectivity.NetworkAccess;
+
+                if (connectivity == NetworkAccess.Internet)
+                {
+                    // Connection to internet is available
+                    this.IsOnline = true;
+                }
+                else
+                {
+                    this.IsOnline = false;
+                }
+
+                XyrohLib.Log("ONLINE: " + this.IsOnline);
+
+                Connectivity.ConnectivityChanged += this.ConnectivityChanged;
             }
 
-            XyrohLib.Log("ONLINE: " + this.IsOnline);
-
-            Connectivity.ConnectivityChanged += this.ConnectivityChanged;
         }
 
         public string Title
@@ -53,7 +58,18 @@ namespace WorstUrlShortener.ViewModels
 
         public bool IsOnline
         {
-            get => this.isOnline;
+            get
+            {
+                if(Device.RuntimePlatform != "macOS")
+                {
+                    return this.isOnline;
+                }
+                else
+                {
+                    // TODO Online connectivity check for MacOS
+                    return true;
+                }
+            }
             set => this.SetProperty(ref this.isOnline, value, "IsOnline");
         }
 

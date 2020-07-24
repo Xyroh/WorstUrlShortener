@@ -39,12 +39,16 @@ namespace WorstUrlShortener.Views
 
             var aboutSection = new TableSection("About");
             this.TableView.Root.Add(aboutSection);
-            aboutSection.Add(new TextCell
+            if (Device.RuntimePlatform != "macOS")
             {
-                Text = "App Version",
-                Detail = VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild,
-                IsEnabled = false
-            });
+                aboutSection.Add(new TextCell
+                {
+                    Text = "App Version",
+                    Detail = VersionTracking.CurrentVersion + "#" + VersionTracking.CurrentBuild,
+                    IsEnabled = false
+                });
+            }
+
             aboutSection.Add(new TextCell { Text = "Author", Detail = "Xyroh Ltd - www.xyroh.com", IsEnabled = false });
 
             var releaseNotesCell = new ImageCell
