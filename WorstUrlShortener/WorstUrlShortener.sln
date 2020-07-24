@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Share.iOS", "Share.iOS\Share.iOS.csproj", "{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorstURLShortener.Mac", "WorstURLShortener.Mac\WorstURLShortener.Mac.csproj", "{8079E08B-1C37-4A3A-83A1-20D6579F22C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,5 +78,17 @@ Global
 		{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}.Debug|iPhone.Build.0 = Debug|iPhone
 		{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}.Release|iPhone.ActiveCfg = Release|iPhone
 		{D220ADA0-A077-42C2-AF85-454A2B1ABEB9}.Release|iPhone.Build.0 = Release|iPhone
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8079E08B-1C37-4A3A-83A1-20D6579F22C8}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

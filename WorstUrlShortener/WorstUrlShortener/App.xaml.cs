@@ -1,8 +1,4 @@
-﻿// <copyright file="App.xaml.cs" company="Askaris IT">
-// Copyright (c) Askaris IT. All rights reserved.
-// </copyright>
-
-using System;
+﻿using System;
 using System.IO;
 using com.xyroh.lib;
 using WorstUrlShortener.ViewModels;
