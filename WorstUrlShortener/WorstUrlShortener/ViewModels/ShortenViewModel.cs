@@ -170,7 +170,7 @@ namespace WorstUrlShortener.ViewModels
             this.ShortURL = shortenedURl;
             if (!string.IsNullOrEmpty(this.ShortURL))
             {
-                if (Device.RuntimePlatform != "macOS")
+                if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
                 {
                     await Clipboard.SetTextAsync(shortenedURl);
                 }
@@ -185,7 +185,7 @@ namespace WorstUrlShortener.ViewModels
         {
             XyrohLib.LogEvent("Shorten Page : Share Link");
 
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 await Share.RequestAsync(new ShareTextRequest {Uri = this.ShortURL, Title = "Shortened Link"});
             }

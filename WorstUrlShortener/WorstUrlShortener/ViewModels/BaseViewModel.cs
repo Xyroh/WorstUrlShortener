@@ -17,7 +17,7 @@ namespace WorstUrlShortener.ViewModels
 
         public BaseViewModel()
         {
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 var connectivity = Connectivity.NetworkAccess;
 
@@ -60,7 +60,7 @@ namespace WorstUrlShortener.ViewModels
         {
             get
             {
-                if(Device.RuntimePlatform != "macOS")
+                if(Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
                 {
                     return this.isOnline;
                 }

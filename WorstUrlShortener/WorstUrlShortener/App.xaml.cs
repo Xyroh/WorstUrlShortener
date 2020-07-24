@@ -21,7 +21,7 @@ namespace WorstUrlShortener
             // XyrohLib Crash handler Setup
             XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "debug.txt"),500000); // 0.5MB
             XyrohLib.Log("Platform: " + Device.RuntimePlatform.ToString());
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
 

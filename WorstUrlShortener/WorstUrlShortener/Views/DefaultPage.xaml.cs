@@ -70,7 +70,7 @@ namespace WorstUrlShortener.Views
 
         protected override void OnAppearing()
         {
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 try
                 {
@@ -88,7 +88,7 @@ namespace WorstUrlShortener.Views
 
         protected override void OnDisappearing()
         {
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 try
                 {

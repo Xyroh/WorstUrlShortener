@@ -39,7 +39,7 @@ namespace WorstUrlShortener.Views
 
             var aboutSection = new TableSection("About");
             this.TableView.Root.Add(aboutSection);
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 aboutSection.Add(new TextCell
                 {
@@ -82,7 +82,7 @@ namespace WorstUrlShortener.Views
 
         protected override void OnAppearing()
         {
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 try
                 {
@@ -100,7 +100,7 @@ namespace WorstUrlShortener.Views
 
         protected override void OnDisappearing()
         {
-            if (Device.RuntimePlatform != "macOS")
+            if (Device.RuntimePlatform != "macOS" && Device.RuntimePlatform != "WPF")
             {
                 try
                 {
