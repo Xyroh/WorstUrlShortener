@@ -112,7 +112,7 @@ jobs:
       inputs:
         serverEndpoint: 'App Center'
         appSlug: 'Xyroh/AzUrlShortener-Apps'
-        appFile: '$(Build.ArtifactStagingDirectory)/WorstApps/WorstServerMonitor.Android/obj/Release/android/bin/com.xyroh.worst.servermonitor.android.apk'
+        appFile: '$(Build.ArtifactStagingDirectory)/WorstUrlShortener/WorstUrlShortener.Android/obj/Release/android/bin/com.xyroh.worst.urlshortener.apk'
         symbolsOption: 'Android'
         releaseNotesInput: 'Testing Release'
         destinationType: 'groups'
@@ -122,7 +122,7 @@ jobs:
       inputs:
         serverEndpoint: 'App Center'
         appSlug: 'Xyroh/AzUrlShortener-Apps'
-        appFile: '$(Build.ArtifactStagingDirectory)/WorstApps/WorstServerMonitor.Android/obj/Release/android/bin/com.xyroh.worst.servermonitor.android.apk'
+        appFile: '$(Build.ArtifactStagingDirectory)/WorstUrlShortener/WorstUrlShortener.Android/obj/Release/android/bin/com.xyroh.worst.urlshortener.apk'
         symbolsOption: 'Android'
         releaseNotesInput: 'Release'
         destinationType: 'groups'
