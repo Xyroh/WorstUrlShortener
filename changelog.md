@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
-- Improved main page device size handling
+- Improved main page, and iOS share sheet device size handling
 ### Fixed
 ### Security
 ### Removed
