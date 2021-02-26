@@ -25,10 +25,15 @@ jobs:
         provisioningProfileLocation: 'secureFiles'
         provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
     - task: InstallAppleProvisioningProfile@1
+      condition: eq(variables.isMaster, false)
+      inputs:
+        provisioningProfileLocation: 'secureFiles'
+        provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
+    - task: InstallAppleProvisioningProfile@1
       condition: eq(variables.isMaster, true)
       inputs:
         provisioningProfileLocation: 'secureFiles'
-        provProfileSecureFile: 'URLShortenerAppStoreProvision-4.mobileprovision'
+        provProfileSecureFile: 'AdHocDistUrlShortenerExtension.mobileprovision'
     - task: InstallAppleCertificate@2
       inputs:
         certSecureFile: 'L85R92MXU6OrgDistCertificates.p12'
