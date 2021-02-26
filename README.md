@@ -5,8 +5,8 @@
 Mobile and Desktop apps to interface with a variety of public URL Shortening services
 
 ## Status
-iOS: [![Build status](https://build.appcenter.ms/v0.1/apps/23951d5c-ad63-41ac-939b-8aec742ad4cf/branches/develop/badge)](https://appcenter.ms)<br/>
-Droid: [![Build status](https://build.appcenter.ms/v0.1/apps/767894e1-b6f8-45f6-8fe3-94a478c8394b/branches/develop/badge)](https://appcenter.ms)<br/>
+Develop (Mobile): [![Build Status](https://xyroh.visualstudio.com/Xyroh%20Build%20Projects/_apis/build/status/Xyroh.WorstUrlShortener?branchName=develop)](https://xyroh.visualstudio.com/Xyroh%20Build%20Projects/_build/latest?definitionId=19&branchName=develop)<br/>
+Master (Mobile): [![Build Status](https://xyroh.visualstudio.com/Xyroh%20Build%20Projects/_apis/build/status/Xyroh.WorstUrlShortener?branchName=master)](https://xyroh.visualstudio.com/Xyroh%20Build%20Projects/_build/latest?definitionId=19&branchName=master)<br/>
 Mac: // TODO<br/>
 Windows: // TODO<br/>
 
