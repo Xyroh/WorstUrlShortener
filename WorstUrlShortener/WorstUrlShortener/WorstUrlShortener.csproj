@@ -4,6 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <CodeAnalysisRuleSet>$(SolutionDir)/Xyroh.ruleset</CodeAnalysisRuleSet>
+    <ReleaseVersion>1.2</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
