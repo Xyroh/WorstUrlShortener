@@ -3,79 +3,79 @@ trigger:
 - develop
 
 jobs:
-- job: iOS
-  pool:
-    vmImage: 'macos-latest'
-  variables:
-    buildConfiguration: 'Release'
-    outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
-    isMaster: $[eq(variables['Build.SourceBranchName'], 'master')]
-    isPR: $[eq(variables['Build.SourceBranchName'], 'merge')]
-  steps:
-    - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
-      displayName: 'Select the Xamarin SDK version'
-      enabled: false
-    - task: NuGetToolInstaller@1
-    - task: NuGetCommand@2
-      inputs:
-        restoreSolution: '**/*.sln'
-    - task: InstallAppleProvisioningProfile@1
-      condition: eq(variables.isMaster, false)
-      inputs:
-        provisioningProfileLocation: 'secureFiles'
-        provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
-    - task: InstallAppleProvisioningProfile@1
-      condition: eq(variables.isMaster, false)
-      inputs:
-        provisioningProfileLocation: 'secureFiles'
-        provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
-    - task: InstallAppleProvisioningProfile@1
-      condition: eq(variables.isMaster, true)
-      inputs:
-        provisioningProfileLocation: 'secureFiles'
-        provProfileSecureFile: 'AdHocDistUrlShortenerExtension.mobileprovision'
-    - task: InstallAppleCertificate@2
-      inputs:
-        certSecureFile: 'L85R92MXU6OrgDistCertificates.p12'
-        certPwd: '$(xyroh.ios.dev.cert.pass)'
-    - task: XamariniOS@2
-      inputs:
-        #solutionFile: '**/*.sln'
-        solutionFile: 'WorstUrlShortener/WorstUrlShortener.iOS/WorstUrlShortener.iOS.csproj'
-        configuration: '$(buildConfiguration)'
-        buildForSimulator: false
-        packageApp: true
-        signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-        signingProvisioningProfileID: '$(APPLE_PROV_PROFILE_UUID)'
-    - task: CopyFiles@2
-      inputs:
-        sourceFolder: '$(Build.SourcesDirectory)'
-        contents: '**/$(BuildConfiguration)/**/?(*.ipa)'
-        targetFolder: '$(Build.ArtifactStagingDirectory)'
-    - task: PublishBuildArtifacts@1
-      inputs:
-        pathToPublish: '$(Build.ArtifactStagingDirectory)'
-        artifactName: ios
-    - task: AppCenterDistribute@3
-      condition: and(eq(variables.isPR, false) ,eq(variables.isMaster, false))
-      inputs:
-        serverEndpoint: 'App Center'
-        appSlug: 'Xyroh/AzUrlShortener-Apps-1/'
-        #appFile: '$(build.SourcesDirectory)/**/*.ipa'
-        appFile: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
-        destinationType: 'groups'
-        releaseNotesInput: 'Testing Release'
-        distributionGroupId: 'f9b28508-00bd-48cd-998a-5eed706dd39e'
-    - task: AppCenterDistribute@3
-      condition: and(eq(variables.isPR, false) ,eq(variables.isMaster, true))
-      inputs:
-        serverEndpoint: 'App Center'
-        appSlug: 'Xyroh/AzUrlShortener-Apps-1/'
-        #appFile: '$(build.SourcesDirectory)/**/*.ipa'
-        appFile: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
-        destinationType: 'groups'
-        releaseNotesInput: 'Release'
-        distributionGroupId: '337a959b-7243-4413-8ee8-56ffd467500b'
+#- job: iOS
+#  pool:
+#    vmImage: 'macos-latest'
+#  variables:
+#    buildConfiguration: 'Release'
+#    outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+#    isMaster: $[eq(variables['Build.SourceBranchName'], 'master')]
+#    isPR: $[eq(variables['Build.SourceBranchName'], 'merge')]
+#  steps:
+#    - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
+#      displayName: 'Select the Xamarin SDK version'
+#      enabled: false
+#    - task: NuGetToolInstaller@1
+ #   - task: NuGetCommand@2
+ #     inputs:
+ #       restoreSolution: '**/*.sln'
+    #- task: InstallAppleProvisioningProfile@1
+    #  condition: eq(variables.isMaster, false)
+    #  inputs:
+    #    provisioningProfileLocation: 'secureFiles'
+    #    provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
+    #- task: InstallAppleProvisioningProfile@1
+    #  condition: eq(variables.isMaster, false)
+    #  inputs:
+    #    provisioningProfileLocation: 'secureFiles'
+    #    provProfileSecureFile: 'AdHocDistUrlShortener.mobileprovision'
+    #- task: InstallAppleProvisioningProfile@1
+    #  condition: eq(variables.isMaster, true)
+    #  inputs:
+    #    provisioningProfileLocation: 'secureFiles'
+    #    provProfileSecureFile: 'AdHocDistUrlShortenerExtension.mobileprovision'
+    #- task: InstallAppleCertificate@2
+    #  inputs:
+    #    certSecureFile: 'L85R92MXU6OrgDistCertificates.p12'
+    #    certPwd: '$(xyroh.ios.dev.cert.pass)'
+    #- task: XamariniOS@2
+    #  inputs:
+    #    #solutionFile: '**/*.sln'
+    #    solutionFile: 'WorstUrlShortener/WorstUrlShortener.iOS/WorstUrlShortener.iOS.csproj'
+    #    configuration: '$(buildConfiguration)'
+    #    buildForSimulator: false
+    #    packageApp: true
+    #    signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+    #    signingProvisioningProfileID: '$(APPLE_PROV_PROFILE_UUID)'
+    #- task: CopyFiles@2
+    #  inputs:
+    #    sourceFolder: '$(Build.SourcesDirectory)'
+    #    contents: '**/$(BuildConfiguration)/**/?(*.ipa)'
+    #    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    #- task: PublishBuildArtifacts@1
+    #  inputs:
+    #    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    #    artifactName: ios
+    #- task: AppCenterDistribute@3
+    #  condition: and(eq(variables.isPR, false) ,eq(variables.isMaster, false))
+    #  inputs:
+    #    serverEndpoint: 'App Center'
+    #    appSlug: 'Xyroh/AzUrlShortener-Apps-1/'
+    #    #appFile: '$(build.SourcesDirectory)/**/*.ipa'
+    #    appFile: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
+    #    destinationType: 'groups'
+    #    releaseNotesInput: 'Testing Release'
+    #    distributionGroupId: 'f9b28508-00bd-48cd-998a-5eed706dd39e'
+    #- task: AppCenterDistribute@3
+    #  condition: and(eq(variables.isPR, false) ,eq(variables.isMaster, true))
+    #  inputs:
+    #    serverEndpoint: 'App Center'
+    #    appSlug: 'Xyroh/AzUrlShortener-Apps-1/'
+    #    #appFile: '$(build.SourcesDirectory)/**/*.ipa'
+    #    appFile: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
+    #    destinationType: 'groups'
+    #    releaseNotesInput: 'Release'
+    #    distributionGroupId: '337a959b-7243-4413-8ee8-56ffd467500b'
         
 - job: Android
   pool:
