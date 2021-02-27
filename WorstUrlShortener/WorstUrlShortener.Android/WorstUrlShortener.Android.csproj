@@ -23,6 +23,8 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <CodeAnalysisRuleSet>$(SolutionDir)/Xyroh.ruleset</CodeAnalysisRuleSet>
+    <ReleaseVersion>1.2</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
