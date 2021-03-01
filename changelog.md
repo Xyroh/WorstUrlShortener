@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed theme so consistent in darkmode closes #55
 ### Security
 ### Removed
+### WIP
+    - History Page #44
 
 ## [1.1.0 - July 2020]
 ### Added
