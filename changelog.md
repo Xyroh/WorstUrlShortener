@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved Release notes page closes #53
 ### Changed
 - Improved main page, and iOS share sheet device size handling
+- Improved Support page layout
 ### Fixed
 - Fixed Message build error on Android
+- Fixed theme so consistent in darkmode closes #55
 ### Security
 ### Removed
 
