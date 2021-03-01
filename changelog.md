@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Improved Release notes page closes #53
 ### Changed
 - Improved main page, and iOS share sheet device size handling
 ### Fixed
