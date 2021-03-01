@@ -73,7 +73,8 @@ namespace WorstUrlShortener.Views
         {
             XyrohLib.LogEvent("Help : Release Notes : Tapped");
 
-            await this.Navigation.PushAsync(new ReleaseNotesPage());
+            // await this.Navigation.PushAsync(new ReleaseNotesPage());
+            await Navigation.PushModalAsync(new WebViewPage("https://xyroh.com/faq/worst-apps/worst-url-shortener-release-history#main"));
         }
 
         protected override void OnAppearing()
