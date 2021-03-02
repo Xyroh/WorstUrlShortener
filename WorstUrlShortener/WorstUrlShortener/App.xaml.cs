@@ -1,7 +1,4 @@
-﻿// <copyright file="App.xaml.cs" company="Askaris IT">
-// Copyright (c) Askaris IT. All rights reserved.
-// </copyright>
-
+﻿
 using System;
 using System.IO;
 using com.xyroh.lib;
@@ -24,7 +21,7 @@ namespace WorstUrlShortener
 
             // XyrohLib Crash handler Setup
             XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "debug.txt"), 500000); // 0.5MB
-            XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
+            XyrohLib.setCrashreporter(BaseConfig.SentryKey);
 
             #if DEBUG
             // XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
@@ -33,7 +30,7 @@ namespace WorstUrlShortener
             #endif
 
             // Freshdesk
-            XyrohLib.SetHelpDesk(SettingsViewModel.FreshDeskURL, SettingsViewModel.FreshDeskKey, "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
+            XyrohLib.SetHelpDesk(BaseConfig.FreshDeskURL, BaseConfig.FreshDeskKey, "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
 
             VersionTracking.Track();
 

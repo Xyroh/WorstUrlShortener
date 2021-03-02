@@ -129,13 +129,13 @@ namespace WorstUrlShortener.ViewModels
                 case "Firebase":
                 {
                     var client = new HttpClient();
-                    var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + SettingsViewModel.FirebaseAPIKey.ToString();
+                    var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + BaseConfig.FirebaseAPIKey.ToString();
                     client.Timeout = TimeSpan.FromSeconds(5);
 
                     try
                     {
                         var json = new FirebaseLinkRequest();
-                        json.longDynamicLink = SettingsViewModel.FirebaseURLDomain + "/?link=" +
+                        json.longDynamicLink = BaseConfig.FirebaseURLDomain + "/?link=" +
                                                this.LongURL + "&apn=" + AppInfo.PackageName + "&ibi=" +
                                                AppInfo.PackageName;
 
