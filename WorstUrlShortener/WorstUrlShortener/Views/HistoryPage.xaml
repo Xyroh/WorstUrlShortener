@@ -7,7 +7,24 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
 
-            <TableView x:Name="TableView" Intent="Menu" BackgroundColor="{DynamicResource XyrohWhite}" />
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
+                <ListView  x:Name="HistoryList" RowHeight="40"  ItemsSource="{Binding History}" SelectionMode="Single">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Label Text="{Binding FullUrl}" />
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                 </ListView>
+            </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 
