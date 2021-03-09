@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using com.xyroh.lib;
 using Newtonsoft.Json;
+using WorstUrlShortener.DAO;
+using WorstUrlShortener.Models;
 using WorstUrlShortener.Models.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -22,6 +24,8 @@ namespace WorstUrlShortener.ViewModels
         private string longURL = "https://xyroh.com";
         private string shortURL;
         private bool hasResults = false;
+
+        private SQLiteContext db;
 
         public ICommand ShortenCommand
         {
@@ -81,6 +85,8 @@ namespace WorstUrlShortener.ViewModels
             this.ShortenServices = new List<string>();
             this.ShortenServices.Add("TinyUrl");
             this.ShortenServices.Add("Firebase");
+
+            this.db = new SQLiteContext();
 
         }
 
@@ -170,7 +176,27 @@ namespace WorstUrlShortener.ViewModels
             this.ShortURL = shortenedURl;
             if (!string.IsNullOrEmpty(this.ShortURL))
             {
+                // save to history
+                var history = new ShortenedUrl();
+                history.ShortenService = this.shortenService;
+                history.FullUrl = this.LongURL;
+                history.ShortUrl = this.ShortURL;
+
+                try
+                {
+                    // Can't use App singleton as App doesn't exist for the extension
+                    this.db.Add(history);
+                    await this.db.SaveChangesAsync();
+
+                    XyrohLib.Log("Saved History: " + shortenedURl);
+                }
+                catch (Exception ex)
+                {
+                    XyrohLib.LogCrash("DB", ex);
+                }
+
                 await Clipboard.SetTextAsync(shortenedURl);
+
                 this.HasResults = true;
                 XyrohLib.Log("Final: " + this.ShortURL);
             }

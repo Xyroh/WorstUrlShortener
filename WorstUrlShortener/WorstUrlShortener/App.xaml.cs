@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using com.xyroh.lib;
+using WorstUrlShortener.DAO;
 using WorstUrlShortener.ViewModels;
 using WorstUrlShortener.Views;
 using Xamarin.Essentials;
@@ -14,6 +15,8 @@ namespace WorstUrlShortener
     {
         public static string ImagesStore;
         public static string SharedURL = string.Empty;
+
+        // public static SQLiteContext DB { get; set; }
 
         public App(string sharedURL)
         {
@@ -44,6 +47,9 @@ namespace WorstUrlShortener
             {
                 XyrohLib.LogCrash(ex);
             }
+
+            // db Prep - Singleton doesn't work in share extension as no 'App'
+            // App.DB = new SQLiteContext();
 
             if (!string.IsNullOrEmpty(sharedURL))
             {
