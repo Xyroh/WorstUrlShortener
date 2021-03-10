@@ -40,6 +40,10 @@ namespace WorstUrlShortener.Views
                 await Clipboard.SetTextAsync(selectedItem.ShortUrl);
                 this.viewModel.ShortURL = selectedItem.ShortUrl;
 
+                SnackBar.Message = "Shortened link copied to the Clipboard" ;
+                SnackBar.CloseButtonText = "Close";
+                SnackBar.IsOpen = !SnackBar.IsOpen;
+
                 /*if (this.viewModel.ShareCommand.CanExecute(null))
                 {
                     this.viewModel.ShareCommand.Execute(null);
@@ -59,6 +63,12 @@ namespace WorstUrlShortener.Views
             {
                 // for the emulator as not supported
             }
+
+            if(this.viewModel.RefreshCommand.CanExecute(null))
+            {
+                this.viewModel.RefreshCommand.Execute(null);
+            }
+            
 
             base.OnAppearing();
         }

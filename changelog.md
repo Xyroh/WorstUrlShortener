@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed Sharesheet extension for simpler copy to clipboard
 ### WIP
     - History Page #44
+    - Toast Style notifcation when copying to clipboard #46
 
 ## [1.1.0 - July 2020]
 ### Added

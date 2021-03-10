@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:WorstUrlShortener.Utilities.Converters"
+             xmlns:local="clr-namespace:WorstUrlShortener.Views.Shared"
              x:Class="WorstUrlShortener.Views.DefaultPage">
 
     <ContentPage.Resources>
@@ -94,7 +95,7 @@
                                     
                                 <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="(Your shortened URL has been copied to the clipboard)"
                                         Font="Italic, 10" HorizontalTextAlignment="Center"
-                                        TextColor="{DynamicResource XyrohGreyDark}"/>
+                                        TextColor="{DynamicResource XyrohGreyDark}" IsVisible="False"/>
                              </Grid>
                         </StackLayout>
 
@@ -104,7 +105,19 @@
                                         TextColor="{DynamicResource XyrohTealDark}" Command="{Binding ShortenCommand}" />
                             </StackLayout>
                         </ContentView>
+
+                        <local:CustomSnackBarView  x:Name="SnackBar" HeightRequest="50" FontSize="{OnPlatform iOS=12, Android=13, UWP=15}" 
+                             BackgroundColor="#323232" 
+                             TextColor="{DynamicResource XyrohTealLight}"
+                             IsOpen="False"
+                             VerticalOptions="Center"
+                             Message=""
+                             ButtonTextColor="{DynamicResource XyrohTealDark}"
+                             CloseButtonText="Close"/>
+
                     </StackLayout>
+
+                    
 
 
 

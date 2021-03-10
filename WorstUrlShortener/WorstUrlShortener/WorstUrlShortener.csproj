@@ -104,4 +104,7 @@
 
   
   
+  <ItemGroup>
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
 </Project>

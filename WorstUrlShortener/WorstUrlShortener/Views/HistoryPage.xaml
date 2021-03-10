@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WorstUrlShortener.Views.HistoryPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:WorstUrlShortener.Views.Shared" x:Class="WorstUrlShortener.Views.HistoryPage">
 
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5,40,5,5" Margin="0">
@@ -55,7 +55,14 @@
                  </ListView>
             </StackLayout>
 
-
+            <local:CustomSnackBarView  x:Name="SnackBar" HeightRequest="50" FontSize="{OnPlatform iOS=12, Android=13, UWP=15}" 
+                             BackgroundColor="#323232" 
+                             TextColor="{DynamicResource XyrohTealLight}"
+                             IsOpen="False"
+                             VerticalOptions="Center"
+                             Message=""
+                             ButtonTextColor="{DynamicResource XyrohTealDark}"
+                             CloseButtonText="Close"/>
 
         </StackLayout>
     </ContentPage.Content>
