@@ -20,7 +20,7 @@ namespace WorstUrlShortener.Views
 
             foreach(var hist in this.viewModel.History)
             {
-                XyrohLib.Log("HIST: " + hist.ShortUrl);
+                XyrohLib.Log("HIST: " + hist.ShortUrl + " : " + hist.CreatedDate);
             }
         }
     }
