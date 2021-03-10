@@ -9,7 +9,7 @@
                     BackgroundColor="White" TextColor="{DynamicResource XyrohTealDark}" />
             </FlexLayout>
 
-            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
                 <ListView  x:Name="HistoryList" RowHeight="65"  ItemsSource="{Binding History}" SelectionMode="Single" HasUnevenRows="False" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -33,8 +33,7 @@
                                             <Label Grid.Column="0" Grid.Row="1" Text="{Binding FullUrl}" TextColor="{DynamicResource XyrohTeal}" HorizontalTextAlignment="Left" VerticalTextAlignment="Center"/>
 
                                             <ImageButton Grid.Row="1" Grid.Column="1" WidthRequest="24" HeightRequest="24"
-                                                BackgroundColor="White"
-                                                Command="{Binding ShareCommand}">
+                                                BackgroundColor="White" Clicked="onShareButtonClicked">
                                                 <ImageButton.Source>
                                                     <FontImageSource FontFamily="{StaticResource FontIcons}"
                                                                     Glyph="{StaticResource ShareIcon}"
@@ -42,6 +41,8 @@
                                                                     Size="24"/>
                                                 </ImageButton.Source>
                                             </ImageButton>
+                                            
+
 
                                         </Grid>
                                         

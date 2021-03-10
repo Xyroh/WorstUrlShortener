@@ -82,7 +82,7 @@
 
                                 <ImageButton Grid.Row="0" Grid.Column="1" WidthRequest="24" HeightRequest="24"
                                                 BackgroundColor="{DynamicResource XyrohOffWhite}"
-                                                Command="{Binding ShareCommand}">
+                                                Clicked="onShareButtonClicked">
                                     <ImageButton.Source>
                                         <FontImageSource FontFamily="{StaticResource FontIcons}"
                                                         Glyph="{StaticResource ShareIcon}"
