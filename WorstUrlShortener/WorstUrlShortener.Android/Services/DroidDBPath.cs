@@ -13,7 +13,7 @@ namespace WorstUrlShortener.Droid.Services
     {
         public string GetDBPath()
         {
-            var dbPath = Path.Combine(FileSystem.AppDataDirectory, BaseConfig.dbName);
+            var dbPath = FileSystem.AppDataDirectory;
 
             return dbPath;
         }
