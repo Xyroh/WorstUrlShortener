@@ -37,8 +37,16 @@ namespace WorstUrlShortener.Views
 
             if (!string.IsNullOrEmpty(selectedItem.ShortUrl))
             {
-                await Clipboard.SetTextAsync(selectedItem.ShortUrl);
                 this.viewModel.ShortURL = selectedItem.ShortUrl;
+
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Uri = this.viewModel.ShortURL,
+                    Title = "Shortened Link"
+                });
+
+                await Clipboard.SetTextAsync(selectedItem.ShortUrl);
+
 
                 SnackBar.Message = "Shortened link copied to the Clipboard";
                 SnackBar.IsOpen = !SnackBar.IsOpen;

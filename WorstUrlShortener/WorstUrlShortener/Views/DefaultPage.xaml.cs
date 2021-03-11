@@ -54,22 +54,18 @@ namespace WorstUrlShortener.Views
             {
                 await Clipboard.SetTextAsync(this.viewModel.ShortURL);
 
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Uri = this.viewModel.ShortURL,
+                    Title = "Shortened Link"
+                });
+
                 SnackBar.Message = "Shortened link copied to the Clipboard";
                 SnackBar.IsOpen = !SnackBar.IsOpen;
 
             }
         }
 
-        /*private async void OnShareButtonClicked(object sender, EventArgs e)
-        {
-            XyrohLib.LogEvent("Shorten Page : Share Link");
-
-            await Share.RequestAsync(new ShareTextRequest
-            {
-                Uri = this.viewModel.ShortURL,
-                Title = "Shortened Link"
-            });
-        }*/
 
         /*private void showResults()
         {
