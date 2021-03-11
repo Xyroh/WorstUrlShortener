@@ -29,7 +29,7 @@ namespace WorstUrlShortener
             #if DEBUG
             // XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
             #else
-				XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
+				XyrohLib.setAnalytics(BaseConfig.AppCenteriOSKey, BaseConfig.AppCenterAndroidKey);
             #endif
 
             // Freshdesk
