@@ -202,6 +202,7 @@ namespace WorstUrlShortener.ViewModels
                 this.HasResults = true;
                 XyrohLib.Log("Final: " + this.ShortURL);
 
+
                 await this.refresh();
             }
 

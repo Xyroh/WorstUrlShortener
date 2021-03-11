@@ -106,13 +106,13 @@
                             </StackLayout>
                         </ContentView>
 
-                        <local:CustomSnackBarView  x:Name="SnackBar" HeightRequest="50" FontSize="{OnPlatform iOS=12, Android=13, UWP=15}" 
-                             BackgroundColor="#323232" 
-                             TextColor="{DynamicResource XyrohTealLight}"
+                        <local:CustomSnackBarView  x:Name="SnackBar" HeightRequest="50" FontSize="{OnPlatform iOS=14, Android=13, UWP=15}" 
+                             BackgroundColor="{DynamicResource XyrohSnackBarBg}" 
+                             TextColor="{DynamicResource XyrohOffWhite}"
                              IsOpen="False"
                              VerticalOptions="Center"
-                             Message=""
-                             ButtonTextColor="{DynamicResource XyrohTealDark}"
+                             Message="Shortened link copied to the Clipboard"
+                             ButtonTextColor="{DynamicResource XyrohTealLight}"
                              CloseButtonText="Close"/>
 
                     </StackLayout>

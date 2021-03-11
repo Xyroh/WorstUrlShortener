@@ -24,6 +24,7 @@
     <Color x:Key="XyrohTeal">#56908D</Color>
     <Color x:Key="XyrohTealDark">#387877</Color>
     <Color x:Key="XyrohGreyDark">#646464</Color>
+    <Color x:Key="XyrohSnackBarBg">#90387877</Color>
 
     <!-- https://andreinitescu.github.io/IconFont2Code/ -->
     <x:String x:Key="SettingsIcon">&#xe72b;</x:String>
