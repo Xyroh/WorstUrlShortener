@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Improved Release notes page closes #53
+- Added History Page closes #44
+- Toast Style notifcation when copying to clipboard closes #46
 ### Changed
 - Improved main page, and iOS share sheet device size handling
 - Improved Support page layout
@@ -18,8 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed Sharesheet extension for simpler copy to clipboard
 ### WIP
-    - History Page #44
-    - Toast Style notifcation when copying to clipboard #46
+    
+    
 
 ## [1.1.0 - July 2020]
 ### Added
