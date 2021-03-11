@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+### Changed
+### Fixed
+### Security
+### Removed
+### WIP
+
+## [1.2.0 - March 2021]
+### Added
 - Improved Release notes page closes #53
 - Added History Page closes #44
 - Toast Style notifcation when copying to clipboard closes #46
@@ -19,7 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 ### Removed
 ### WIP
-    
     
 
 ## [1.1.0 - July 2020]
