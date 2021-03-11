@@ -8307,7 +8307,7 @@ namespace WorstUrlShortener.Droid
 			public const int design_snackbar_background = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int help = 2131165282;
+			public const int Help = 2131165282;
 			
 			// aapt resource value: 0x7F070066
 			public const int icon = 2131165286;
@@ -8322,7 +8322,7 @@ namespace WorstUrlShortener.Droid
 			public const int ic_mtrl_chip_close_circle = 2131165285;
 			
 			// aapt resource value: 0x7F070067
-			public const int idea = 2131165287;
+			public const int Idea = 2131165287;
 			
 			// aapt resource value: 0x7F070068
 			public const int mtrl_snackbar_background = 2131165288;
@@ -8370,7 +8370,7 @@ namespace WorstUrlShortener.Droid
 			public const int notify_panel_notification_icon_bg = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int releasenotes = 2131165303;
+			public const int ReleaseNotes = 2131165303;
 			
 			// aapt resource value: 0x7F070078
 			public const int tooltip_frame_dark = 2131165304;

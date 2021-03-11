@@ -23,7 +23,7 @@ namespace WorstUrlShortener.Views
 
             var supportCell = new ImageCell
             {
-                Text = "Support & Suggestions", Detail = "help@xyroh.com", ImageSource = ImageSource.FromFile("help.png")
+                Text = "Support & Suggestions", Detail = "help@xyroh.com", ImageSource = ImageSource.FromFile("Help")
             };
             supportCell.Tapped += this.OnSupportCellTapped;
             mainSection.Add(supportCell);
@@ -32,7 +32,7 @@ namespace WorstUrlShortener.Views
             {
                 Text = "Feature Requests",
                 Detail = "Got an idea or like us to implement a feature?",
-                ImageSource = ImageSource.FromFile("idea.png")
+                ImageSource = ImageSource.FromFile("Idea")
             };
             ideaCell.Tapped += this.OnIdeaCellTapped;
             mainSection.Add(ideaCell);
@@ -49,7 +49,7 @@ namespace WorstUrlShortener.Views
 
             var releaseNotesCell = new ImageCell
             {
-                Text = "What's New?", Detail = "Latest release notes", ImageSource = ImageSource.FromFile("releasenotes.png")
+                Text = "What's New?", Detail = "Latest release notes", ImageSource = ImageSource.FromFile("ReleaseNotes")
             };
             releaseNotesCell.Tapped += this.OnReleaseNotesCellTapped;
             aboutSection.Add(releaseNotesCell);

@@ -96,9 +96,9 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\help.png" />
-    <AndroidResource Include="Resources\drawable\idea.png" />
-    <AndroidResource Include="Resources\drawable\releasenotes.png" />
+    <AndroidResource Include="Resources\drawable\Help.png" />
+    <AndroidResource Include="Resources\drawable\Idea.png" />
+    <AndroidResource Include="Resources\drawable\ReleaseNotes.png" />
     <AndroidResource Include="Resources\drawable\icon.png">
       <SubType></SubType>
       <Generator></Generator>
