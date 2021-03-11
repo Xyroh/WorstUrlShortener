@@ -1,15 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using com.xyroh.lib;
-using Newtonsoft.Json;
 using WorstUrlShortener.Interfaces;
 using WorstUrlShortener.Models;
-using WorstUrlShortener.Models.Json;
 using WorstUrlShortener.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -17,42 +10,34 @@ using Xamarin.Forms.Xaml;
 
 namespace WorstUrlShortener.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DefaultPage : ContentPage
+    public partial class HistoryPage : ContentPage
     {
         private ShortenViewModel viewModel = new ShortenViewModel();
 
-        public DefaultPage()
+        public HistoryPage()
         {
-            XyrohLib.LogEvent("Page : Shorten ");
+            XyrohLib.LogEvent("Page : History ");
 
             this.BindingContext = this.viewModel;
             this.InitializeComponent();
 
-            if (!string.IsNullOrEmpty(App.SharedURL))
+
+            /*foreach(var hist in this.viewModel.History)
             {
-                this.viewModel.LongURL = App.SharedURL;
-            }
-
-        }
-
-        private void OnFullURLFocused(object sender, FocusEventArgs e)
-        {
-            // reset page as assume new request
-            this.viewModel.HasResults = false;
-            this.viewModel.ShortURL = string.Empty;
+                XyrohLib.Log("HIST: " + hist.ShortUrl + " : " + hist.CreatedDate);
+            }*/
         }
 
         private async void onShareButtonClicked(object sender, EventArgs e)
         {
             XyrohLib.LogEvent("Button : Share URL");
 
-            // var button = sender as ImageButton;
-            // var selectedItem = button.BindingContext as ShortenedUrl;
+            var button = sender as ImageButton;
+            var selectedItem = button.BindingContext as ShortenedUrl;
 
-            if (!string.IsNullOrEmpty(this.viewModel.ShortURL))
+            if (!string.IsNullOrEmpty(selectedItem.ShortUrl))
             {
-                await Clipboard.SetTextAsync(this.viewModel.ShortURL);
+                this.viewModel.ShortURL = selectedItem.ShortUrl;
 
                 await Share.RequestAsync(new ShareTextRequest
                 {
@@ -60,27 +45,19 @@ namespace WorstUrlShortener.Views
                     Title = "Shortened Link"
                 });
 
+                await Clipboard.SetTextAsync(selectedItem.ShortUrl);
+
+
                 SnackBar.Message = "Shortened link copied to the Clipboard";
                 SnackBar.IsOpen = !SnackBar.IsOpen;
 
+                /*if (this.viewModel.ShareCommand.CanExecute(null))
+                {
+                    this.viewModel.ShareCommand.Execute(null);
+                }*/
             }
         }
 
-
-        /*private void showResults()
-        {
-            this.CopyToClipBoardGrid.IsVisible = true;
-            this.ResultsLabel.IsVisible = true;
-            this.ShortenButton.IsEnabled = true;
-
-        }
-
-        private void hideResults()
-        {
-            this.CopyToClipBoardGrid.IsVisible = false;
-            this.ResultsLabel.IsVisible = false;
-            this.ShortenButton.IsEnabled = true;
-        }*/
 
         protected override void OnAppearing()
         {
@@ -93,6 +70,12 @@ namespace WorstUrlShortener.Views
             {
                 // for the emulator as not supported
             }
+
+            if(this.viewModel.RefreshCommand.CanExecute(null))
+            {
+                this.viewModel.RefreshCommand.Execute(null);
+            }
+
 
             base.OnAppearing();
         }

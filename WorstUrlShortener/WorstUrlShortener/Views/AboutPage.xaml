@@ -3,13 +3,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorstUrlShortener.Views.AboutPage"  >
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="About"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
 
-            <TableView x:Name="TableView" Intent="Menu" BackgroundColor="{DynamicResource XyrohWhite}" />
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="5,40,5,5" Margin="0">
+
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" BackgroundColor="White" Padding="5,20,5,25">
+                <Label  Text="About" Font="Normal, 24" HorizontalTextAlignment="Center"
+                    BackgroundColor="White" TextColor="{DynamicResource XyrohTealDark}" />
+            </FlexLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Blue">
+                
+                <TableView x:Name="TableView" Intent="Menu" BackgroundColor="{DynamicResource XyrohWhite}" />
+
+            </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

@@ -5,7 +5,7 @@ using CoreFoundation;
 using Foundation;
 using Social;
 using UIKit;
-using WorstUrlShortener.ViewModels;
+using WorstUrlShortener;
 using WorstUrlShortener.Views;
 using Xamarin.Forms;
 
@@ -17,8 +17,8 @@ namespace Share.iOS
         {
             // Note: this .ctor should not contain any initialization logic.
             XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "sharedebug.txt"), 500000); // 0.5MB
-            XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
-            XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
+            XyrohLib.setCrashreporter(BaseConfig.SentryKey);
+            XyrohLib.setAnalytics(BaseConfig.AppCenteriOSKey, BaseConfig.AppCenterAndroidKey);
             XyrohLib.Log("**HERE**");
 
             XyrohLib.LogEvent("Extension : Share ");
