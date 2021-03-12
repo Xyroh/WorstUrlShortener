@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TemplatedView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorstUrlShortener.Views.Shared.CustomSnackBarView">
+    <TemplatedView.ControlTemplate>
+        <ControlTemplate>
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="{TemplateBinding Message}"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                       Margin="5" LineBreakMode="WordWrap"
+                       FontSize="{TemplateBinding FontSize}"
+                       TextColor="{TemplateBinding TextColor}"
+                       FontFamily="{TemplateBinding FontFamily}"/>
+
+                <Button Grid.Column="1" HorizontalOptions="End"
+                        Clicked="CloseButton_Clicked" Margin="5"
+                        FontFamily="{TemplateBinding FontFamily}"
+                        FontSize="{TemplateBinding FontSize}"
+                        TextColor="{TemplateBinding ButtonTextColor}"
+                        BackgroundColor="{TemplateBinding CloseButtonBackGroundColor}"
+                        VerticalOptions="Center" Text="{TemplateBinding CloseButtonText}"/>
+            </Grid>
+        </ControlTemplate>
+    </TemplatedView.ControlTemplate>
+</TemplatedView>
