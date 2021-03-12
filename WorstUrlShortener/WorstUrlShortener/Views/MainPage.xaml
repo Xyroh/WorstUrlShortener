@@ -27,6 +27,14 @@
         </views:DefaultPage.IconImageSource>
     </views:DefaultPage>
 
+    <views:HistoryPage Title="History" >
+        <views:HistoryPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                             Glyph="{StaticResource ListIcon}"
+                             Size="24"/>
+        </views:HistoryPage.IconImageSource>
+    </views:HistoryPage>
+
     <views:AboutPage Title="Help" >
         <views:AboutPage.IconImageSource>
             <FontImageSource FontFamily="{StaticResource FontIcons}"

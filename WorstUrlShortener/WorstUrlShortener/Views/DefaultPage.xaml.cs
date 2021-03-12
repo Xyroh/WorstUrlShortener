@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using com.xyroh.lib;
 using Newtonsoft.Json;
 using WorstUrlShortener.Interfaces;
+using WorstUrlShortener.Models;
 using WorstUrlShortener.Models.Json;
 using WorstUrlShortener.ViewModels;
 using Xamarin.Essentials;
@@ -42,16 +43,29 @@ namespace WorstUrlShortener.Views
             this.viewModel.ShortURL = string.Empty;
         }
 
-        /*private async void OnShareButtonClicked(object sender, EventArgs e)
+        private async void onShareButtonClicked(object sender, EventArgs e)
         {
-            XyrohLib.LogEvent("Shorten Page : Share Link");
+            XyrohLib.LogEvent("Button : Share URL");
 
-            await Share.RequestAsync(new ShareTextRequest
+            // var button = sender as ImageButton;
+            // var selectedItem = button.BindingContext as ShortenedUrl;
+
+            if (!string.IsNullOrEmpty(this.viewModel.ShortURL))
             {
-                Uri = this.viewModel.ShortURL,
-                Title = "Shortened Link"
-            });
-        }*/
+                await Clipboard.SetTextAsync(this.viewModel.ShortURL);
+
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Uri = this.viewModel.ShortURL,
+                    Title = "Shortened Link"
+                });
+
+                SnackBar.Message = "Shortened link copied to the Clipboard";
+                SnackBar.IsOpen = !SnackBar.IsOpen;
+
+            }
+        }
+
 
         /*private void showResults()
         {

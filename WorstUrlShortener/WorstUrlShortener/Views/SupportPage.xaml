@@ -34,7 +34,7 @@
 
                             <FlexLayout Grid.ColumnSpan="1" Grid.Row="0" Direction="Row" AlignItems="Center"
                                         JustifyContent="SpaceAround" BackgroundColor="{DynamicResource XyrohOffWhite}">
-                                <Label x:Name="SupportPageTitle" Text="" Font="Normal, 24"
+                                <Label x:Name="SupportPageTitle" Text="" Font="Normal, 24" HorizontalTextAlignment="Center" 
                                        BackgroundColor="{DynamicResource XyrohOffWhite}" TextColor="{DynamicResource XyrohTealDark}" />
 
                             </FlexLayout>

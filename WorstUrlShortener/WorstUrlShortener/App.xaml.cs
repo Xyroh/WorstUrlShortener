@@ -1,10 +1,8 @@
-﻿// <copyright file="App.xaml.cs" company="Askaris IT">
-// Copyright (c) Askaris IT. All rights reserved.
-// </copyright>
-
+﻿
 using System;
 using System.IO;
 using com.xyroh.lib;
+using WorstUrlShortener.DAO;
 using WorstUrlShortener.ViewModels;
 using WorstUrlShortener.Views;
 using Xamarin.Essentials;
@@ -18,22 +16,24 @@ namespace WorstUrlShortener
         public static string ImagesStore;
         public static string SharedURL = string.Empty;
 
+        // public static SQLiteContext DB { get; set; }
+
         public App(string sharedURL)
         {
             this.InitializeComponent();
 
             // XyrohLib Crash handler Setup
             XyrohLib.setFileLog(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "debug.txt"), 500000); // 0.5MB
-            XyrohLib.setCrashreporter(SettingsViewModel.SentryKey);
+            XyrohLib.setCrashreporter(BaseConfig.SentryKey);
 
             #if DEBUG
             // XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
             #else
-				XyrohLib.setAnalytics(SettingsViewModel.AppCenteriOSKey, SettingsViewModel.AppCenterAndroidKey);
+				XyrohLib.setAnalytics(BaseConfig.AppCenteriOSKey, BaseConfig.AppCenterAndroidKey);
             #endif
 
             // Freshdesk
-            XyrohLib.SetHelpDesk(SettingsViewModel.FreshDeskURL, SettingsViewModel.FreshDeskKey, "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
+            XyrohLib.SetHelpDesk(BaseConfig.FreshDeskURL, BaseConfig.FreshDeskKey, "c29tZSByYW5kb20gdW5uZWNlc3Nhcnkga2V5");
 
             VersionTracking.Track();
 
@@ -47,6 +47,9 @@ namespace WorstUrlShortener
             {
                 XyrohLib.LogCrash(ex);
             }
+
+            // db Prep - Singleton doesn't work in share extension as no 'App'
+            // App.DB = new SQLiteContext();
 
             if (!string.IsNullOrEmpty(sharedURL))
             {

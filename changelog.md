@@ -10,6 +10,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 ### Removed
+### WIP
+
+## [1.2.0 - March 2021]
+### Added
+- Improved Release notes page closes #53
+- Added History Page closes #44
+- Toast Style notifcation when copying to clipboard closes #46
+### Changed
+- Improved main page, and iOS share sheet device size handling
+- Improved Support page layout
+- Moved Config to static class
+### Fixed
+- Fixed Message build error on Android
+- Fixed theme so consistent in darkmode closes #55
+### Security
+### Removed
+### WIP
+    
 
 ## [1.1.0 - July 2020]
 ### Added
