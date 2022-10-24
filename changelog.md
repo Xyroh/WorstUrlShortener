@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### WIP
 
+## [1.3.0 - Oct 2022]
+### Fixed
+- Fixed non UTC datetime issue - https://sentry.io/organizations/xyroh-ltd/issues/2271952310/events/96cf93a6f9b6473e8be56f662fe54c9e/?project=5257872
+
 ## [1.2.0 - March 2021]
 ### Added
 - Improved Release notes page closes #53

@@ -24,7 +24,7 @@ namespace WorstUrlShortener.Models
         {
 			get
 			{
-				if (this.CreatedAt.Value != DateTime.MinValue)
+				if (this.CreatedAt.Value != DateTime.MinValue.ToUniversalTime())
 				{
 					return this.CreatedAt.Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
 				}
